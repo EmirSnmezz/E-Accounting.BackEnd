@@ -1,0 +1,13 @@
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Presentation.deps.json
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Presentation.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Presentation.pdb
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.csproj.AssemblyReference.cache
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.AssemblyInfoInputs.cache
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.AssemblyInfo.cs
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.sourcelink.json
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\refint\E-Accounting-BackEnd.Presentation.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.pdb
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\ref\E-Accounting-BackEnd.Presentation.dll

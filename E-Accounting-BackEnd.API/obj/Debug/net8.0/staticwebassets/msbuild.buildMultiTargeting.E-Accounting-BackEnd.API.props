@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\E-Accounting-BackEnd.API.props" />
+</Project>
