@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>E_Accounting.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstraction\" />
+    <Folder Include="Abstraction\Repositories\Base Entites\" />
+    <Folder Include="Abstraction\Repositories\Repositories Of Entities\" />
+  </ItemGroup>
+
+</Project>
