@@ -4,11 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>E_Accounting.Domain</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Folder Include="Entities\User Entities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
   </ItemGroup>
 
 </Project>

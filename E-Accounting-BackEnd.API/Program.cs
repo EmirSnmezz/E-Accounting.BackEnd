@@ -1,4 +1,5 @@
 using E_Accounted_BackEnd.Presentation;
+using E_Accounting.Persistance.Registrations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -38,6 +39,9 @@ builder.Services.AddSwaggerGen(setup => // Swager yapýlanmasýný özelleþtirmek iç
         {jwtSecuritySheme, Array.Empty<string>() }
     });
 });
+
+builder.Services.AddDbContext();
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
