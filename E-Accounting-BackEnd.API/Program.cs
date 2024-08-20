@@ -1,5 +1,5 @@
 using E_Accounted_BackEnd.Presentation;
-using E_Accounting.Persistance.Registrations;
+using E_Accounting.Persistance.Contexts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -40,7 +40,7 @@ builder.Services.AddSwaggerGen(setup => // Swager yapýlanmasýný özelleþtirmek iç
     });
 });
 
-builder.Services.AddDbContext();
+builder.Services.AddDbContext<MasterDbContext>();
 
     var app = builder.Build();
 
