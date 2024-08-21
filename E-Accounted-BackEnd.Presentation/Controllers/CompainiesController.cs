@@ -1,6 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
-using E_Accounting.Application.Features.CompanyFeatures.Commands.CreateCompany;
-using E_Accounting.Application.Features.CompanyFeatures.Commands.MigrateCompanyDatabase;
+using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.MigrateCompanyDatabase;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;

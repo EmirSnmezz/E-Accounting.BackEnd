@@ -17,7 +17,7 @@ namespace E_Accounting.Persistance.Repositories.BaseRepositories
         private CompanyDbContext _context;
         public DbSet<T> Table => _context.Set<T>();
 
-        public void CreateDbContext(DbContext context)
+        public void SetDbContext(DbContext context)
         {
             _context = (CompanyDbContext)context;
         }

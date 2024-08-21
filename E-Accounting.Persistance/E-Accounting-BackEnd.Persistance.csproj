@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Contexts\DesignTimeFactories\" />
     <Folder Include="Registrations\" />
-    <Folder Include="Service\CompanyService\" />
   </ItemGroup>
 
   <ItemGroup>

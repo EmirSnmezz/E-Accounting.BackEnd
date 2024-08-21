@@ -11,7 +11,7 @@ namespace E_Accounting.Application.Abstraction.Repositories.Base_Entites
     public interface IRepository<T> where T : BaseEntity
     {
         DbSet<T> Table { get; }
-        void CreateDbContext(DbContext context);
+        void SetDbContextInstance(DbContext context);
 
     }
 }

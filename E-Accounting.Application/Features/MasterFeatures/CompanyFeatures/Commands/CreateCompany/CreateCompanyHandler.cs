@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Accounting.Application.Features.CompanyFeatures.Commands.CreateCompany
+namespace E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany
 {
     public sealed class CreateCompanyHandler : IRequestHandler<CreateCompanyRequest, CreateCompanyResponse>
     {
