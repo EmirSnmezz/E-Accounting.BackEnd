@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Configuration
 {
-    public sealed class UniformChartOfAccountConfiguration : IEntityTypeConfiguration<UniformChartOfAccount>
+    public sealed class UniformChartOfAccountConfiguration : IEntityTypeConfiguration<UniformChartOfAccount> // IEntityTypeConfiguration<T>, T için veritabanı yapılandırmasını sağlamak üzere kullanılır
     {
         public void Configure(EntityTypeBuilder<UniformChartOfAccount> builder)
         {

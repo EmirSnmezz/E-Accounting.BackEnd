@@ -15,7 +15,7 @@ namespace E_Accounting.Persistance.Contexts
     public class CompanyDbContext : DbContext
     {
         protected string _connectionString = "";
-        public CompanyDbContext(string companyId, Company company = null)
+        public CompanyDbContext(Company company = null)
         {
             if(company != null)
             {
@@ -61,7 +61,7 @@ namespace E_Accounting.Persistance.Contexts
         {
             public CompanyDbContext CreateDbContext(string[] args)
             {   
-                return new CompanyDbContext("");
+                return new CompanyDbContext();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using E_Accounting.Application.Features.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Features.CompanyFeatures.Commands.MigrateCompanyDatabase;
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Persistance.Contexts;
@@ -28,6 +29,16 @@ namespace E_Accounting.Persistance.Service.MasterService
         public async Task<Company?> GetCompanyByName(string companyName)
         {
             return await _context.Set<Company>().FirstOrDefaultAsync(x => x.Name == companyName);
+        }
+
+        public async Task MigrateCompanyDatabase()
+        {
+          var companies = await _context.Set<Company>().ToListAsync();
+            foreach (var company in companies)
+            {
+                var db = new CompanyDbContext(company);
+                db.Database.Migrate();
+            }
         }
     }
 }

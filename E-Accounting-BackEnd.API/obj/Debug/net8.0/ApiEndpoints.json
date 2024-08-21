@@ -14,5 +14,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
+    "Method": "MigrateCompanyDatabases",
+    "RelativePath": "api/Compainies/MigrateCompanyDatabases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
