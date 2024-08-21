@@ -11,9 +11,12 @@
     <Folder Include="Contexts\DesignTimeFactories\" />
     <Folder Include="Registrations\" />
     <Folder Include="Repositories\" />
+    <Folder Include="Service\CompanyService\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -28,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\E-Accounting.Application\E-Accounting-BackEnd.Application.csproj" />
     <ProjectReference Include="..\E-Accounting.Domain\E-Accounting-BackEnd.Domain.csproj" />
   </ItemGroup>
 

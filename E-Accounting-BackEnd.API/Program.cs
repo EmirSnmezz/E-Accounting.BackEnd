@@ -1,5 +1,10 @@
-using E_Accounted_BackEnd.Presentation;
+using E_Accounting.Application.Features.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Services.MasterService;
+using E_Accounting.Domain.Entities.App_Entites;
+using E_Accounting.Domain.Entities.App_Entites.Identity;
 using E_Accounting.Persistance.Contexts;
+using E_Accounting.Persistance.Service.MasterService;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -8,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers().AddApplicationPart(typeof(AssemblyReferance).Assembly);
+builder.Services.AddControllers().AddApplicationPart(typeof(E_Accounting.Persistance.AssemblyReferance.AssemblyManager).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup => // Swager yapýlanmasýný özelleþtirmek için bir lambda ifadesi kullandýk
@@ -40,8 +45,12 @@ builder.Services.AddSwaggerGen(setup => // Swager yapýlanmasýný özelleþtirmek iç
     });
 });
 
-builder.Services.AddDbContext<MasterDbContext>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateCompanyHandler).GetTypeInfo().Assembly));
+builder.Services.AddAutoMapper(typeof(E_Accounting.Persistance.AssemblyReferance.AssemblyManager).Assembly);
 
+builder.Services.AddDbContext<MasterDbContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<MasterDbContext>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.

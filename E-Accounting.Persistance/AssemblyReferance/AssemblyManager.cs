@@ -9,6 +9,7 @@ namespace E_Accounting.Persistance.AssemblyReferance
 {
     public static class AssemblyManager
     {
-        public static readonly Assembly myAssembly = typeof(Assembly).Assembly;
+        public static readonly Assembly assembly = typeof(Assembly).Assembly;
+        
     }
 }

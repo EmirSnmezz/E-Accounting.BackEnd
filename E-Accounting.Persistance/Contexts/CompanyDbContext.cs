@@ -14,7 +14,7 @@ namespace E_Accounting.Persistance.Contexts
 {
     public class CompanyDbContext : DbContext
     {
-        private string _connectionString = "";
+        protected string _connectionString = "";
         public CompanyDbContext(string companyId, Company company = null)
         {
             if(company != null)

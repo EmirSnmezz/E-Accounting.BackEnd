@@ -11,3 +11,8 @@ C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentatio
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\refint\E-Accounting-BackEnd.Presentation.dll
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accounting-BackEnd.Presentation.pdb
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\ref\E-Accounting-BackEnd.Presentation.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Application.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Application.pdb
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\obj\Debug\net8.0\E-Accoun.0201FF7A.Up2Date
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Domain.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounted-BackEnd.Presentation\bin\Debug\net8.0\E-Accounting-BackEnd.Domain.pdb

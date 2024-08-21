@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="12.4.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Accounted-BackEnd.Presentation\E-Accounting-BackEnd.Presentation.csproj" />
+    <ProjectReference Include="..\E-Accounting.Application\E-Accounting-BackEnd.Application.csproj" />
     <ProjectReference Include="..\E-Accounting.Persistance\E-Accounting-BackEnd.Persistance.csproj" />
   </ItemGroup>
 

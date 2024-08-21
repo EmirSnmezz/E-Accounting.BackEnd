@@ -16,3 +16,5 @@ C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\obj\De
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\obj\Debug\net8.0\E-Accounting-BackEnd.Persistance.pdb
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\obj\Debug\net8.0\E-Accounting-BackEnd.Persistance.genruntimeconfig.cache
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\obj\Debug\net8.0\ref\E-Accounting-BackEnd.Persistance.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\bin\Debug\net8.0\E-Accounting-BackEnd.Application.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Persistance\bin\Debug\net8.0\E-Accounting-BackEnd.Application.pdb

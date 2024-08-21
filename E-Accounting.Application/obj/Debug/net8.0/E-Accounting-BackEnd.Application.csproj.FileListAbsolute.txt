@@ -10,3 +10,7 @@ C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\De
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\Debug\net8.0\refint\E-Accounting-BackEnd.Application.dll
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\Debug\net8.0\E-Accounting-BackEnd.Application.pdb
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\Debug\net8.0\ref\E-Accounting-BackEnd.Application.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\Debug\net8.0\E-Accounting-BackEnd.Application.csproj.AssemblyReference.cache
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\bin\Debug\net8.0\E-Accounting-BackEnd.Domain.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\bin\Debug\net8.0\E-Accounting-BackEnd.Domain.pdb
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting.Application\obj\Debug\net8.0\E-Accoun.0B1E07CB.Up2Date

@@ -11,6 +11,17 @@
     <Folder Include="Abstraction\" />
     <Folder Include="Abstraction\Repositories\Base Entites\" />
     <Folder Include="Abstraction\Repositories\Repositories Of Entities\" />
+    <Folder Include="Features\CompanyFeatures\Queries\" />
+    <Folder Include="Features\MasterFeatures\" />
+    <Folder Include="Services\CompanyService\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Accounting.Domain\E-Accounting-BackEnd.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -28,7 +28,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj": {
+                "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -46,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
@@ -99,6 +107,9 @@
               "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounted-BackEnd.Presentation\\E-Accounting-BackEnd.Presentation.csproj": {
                 "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounted-BackEnd.Presentation\\E-Accounting-BackEnd.Presentation.csproj"
               },
+              "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj": {
+                "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj"
+              },
               "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Persistance\\E-Accounting-BackEnd.Persistance.csproj": {
                 "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Persistance\\E-Accounting-BackEnd.Persistance.csproj"
               }
@@ -120,6 +131,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -154,6 +181,77 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj",
+        "projectName": "E-Accounting-BackEnd.Application",
+        "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj",
+        "packagesPath": "C:\\Users\\emirc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\emirc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Domain\\E-Accounting-BackEnd.Domain.csproj": {
+                "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Domain\\E-Accounting-BackEnd.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -254,6 +352,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj": {
+                "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj"
+              },
               "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Domain\\E-Accounting-BackEnd.Domain.csproj": {
                 "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Domain\\E-Accounting-BackEnd.Domain.csproj"
               }
@@ -275,6 +376,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
