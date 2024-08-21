@@ -11,7 +11,7 @@ namespace E_Accounting.Application.Abstraction.Repositories.Base_Entites
     public interface IQueryRepository<T> : IRepository<T> where T : BaseEntity
     {
      
-        IQueryable<T> GetAll();
+        IQueryable<T> GetAll(bool isTracking = true);
         IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate);
         Task<T> GetById(string id);
         Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate);

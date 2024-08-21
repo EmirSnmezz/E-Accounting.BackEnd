@@ -2,6 +2,7 @@
 using E_Accounting.Domain.Common;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,29 +22,41 @@ namespace E_Accounting.Persistance.Repositories.BaseRepositories
             _context = (CompanyDbContext)context;
         }
 
-        public IQueryable<T> GetAll()
+        public IQueryable<T> GetAll(bool isTracking = true)
         {
-            throw new NotImplementedException();
+            var query = Table.AsQueryable();
+
+            if (!isTracking)
+            {
+             query.AsNoTracking();
+            }
+
+            return query;
+
         }
 
-        public Task<T> GetById(string id)
+        public async Task<T> GetById(string id)
         {
-            throw new NotImplementedException();
+            T data = await Table.FindAsync(id);
+            return data;
         }
 
-        public Task<T> GetFirst()
+        public async Task<T> GetFirst()
         {
-            throw new NotImplementedException();
+           T data = await Table.FirstAsync(); // tablodaki ilk kaydı getirecek
+            return data;
         }
 
-        public Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate)
+        public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            T data = await Table.FirstAsync(predicate);
+            return data;
         }
 
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+           IQueryable<T> query = Table.Where(predicate);
+            return query;
         }
     }
 }
