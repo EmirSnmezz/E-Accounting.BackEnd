@@ -29,7 +29,7 @@ namespace E_Accounting.Persistance.Contexts
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
-            var entries = ChangeTracker.Entries<BaseEntiy>();
+            var entries = ChangeTracker.Entries<BaseEntity>();
             foreach (var entry in entries)
             {
                 if(entry.State == EntityState.Added)

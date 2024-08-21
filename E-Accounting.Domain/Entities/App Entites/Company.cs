@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Domain.Entities.App_Entites
 {
-    public sealed class Company : BaseEntiy
+    public sealed class Company : BaseEntity
     {
         public string Name { get; set; }
         public string Address { get; set; }

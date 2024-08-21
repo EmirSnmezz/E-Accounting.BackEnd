@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstraction\" />
-    <Folder Include="Abstraction\Repositories\Base Entites\" />
     <Folder Include="Abstraction\Repositories\Repositories Of Entities\" />
     <Folder Include="Features\CompanyFeatures\Queries\" />
     <Folder Include="Features\MasterFeatures\" />

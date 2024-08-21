@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Domain.Common
 {
-    public abstract class BaseEntiy
+    public abstract class BaseEntity
     {
         public  string Id { get; set; }
         public DateTime CreatedDate { get; set; }

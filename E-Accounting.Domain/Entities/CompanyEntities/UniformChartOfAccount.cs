@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Domain.Entities.CompanyEntities
 {
-    public sealed class UniformChartOfAccount : BaseEntiy
+    public sealed class UniformChartOfAccount : BaseEntity
     {
         public string Code { get; set; }
         public string Name { get; set; }
