@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.CompanyFeatures.Commands.CreateCompany.CreateCompanyRequest",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany.CreateCompanyRequest",
         "IsRequired": true
       }
     ],
@@ -23,6 +23,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
+    "Method": "CreateUCAF",
+    "RelativePath": "api/UCAFS/CreateUCAF",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF.CreateUCAFRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

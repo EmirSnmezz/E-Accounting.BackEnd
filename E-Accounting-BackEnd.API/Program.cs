@@ -1,12 +1,14 @@
 using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
 using E_Accounting.Persistance;
 using E_Accounting.Persistance.Contexts;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
+using E_Accounting.Persistance.Service.CompanyService;
 using E_Accounting.Persistance.Service.MasterService;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -60,6 +62,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUCAFQueryRepository, UCAFQueryRepository>();
 builder.Services.AddScoped<IUCAFCommandRepository, UCAFCommandRepository>();
 builder.Services.AddScoped<IContextService, ContextService>();
+builder.Services.AddScoped<IUCAFService, UCAFService>();
 
 var app = builder.Build();
 

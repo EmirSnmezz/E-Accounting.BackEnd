@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Company Features\UCAFFeautres\Queries\" />
+    <Folder Include="Features\CompanyFeatures\UCAFFeautres\Queries\" />
     <Folder Include="Features\MasterFeatures\CompanyFeatures\Queries\" />
   </ItemGroup>
 

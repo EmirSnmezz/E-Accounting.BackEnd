@@ -19,7 +19,7 @@ namespace E_Accounting.Persistance
         }
         public DbContext CreateDbContextInstance(string companyId)
         {
-            Company company = _contextService.Set<Company>().Find(companyId);
+            Company company = ((MasterDbContext)_contextService).Set<Company>().Find(companyId);
             return new CompanyDbContext(company);
         }
     }
