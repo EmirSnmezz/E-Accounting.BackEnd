@@ -12,9 +12,9 @@ namespace E_Accounting.Application.Abstraction.Repositories.Base_Entites
     {
      
         IQueryable<T> GetAll(bool isTracking = true);
-        IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate);
-        Task<T> GetById(string id);
-        Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate);
-        Task<T> GetFirst();
+        IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate, bool isTracking = true);
+        Task<T> GetById(string id, bool isTracking = true);
+        Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate, bool isTracking = true);
+        Task<T> GetFirst(bool isTracking = true);
     }
 }

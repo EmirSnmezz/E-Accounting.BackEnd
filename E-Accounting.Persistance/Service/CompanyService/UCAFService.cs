@@ -35,6 +35,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _unitOfWork.SetDbContextInstance(_companyDbContext);
             UniformChartOfAccount uniformChartOfAccount = _mapper.Map<UniformChartOfAccount>(request);
             uniformChartOfAccount.Id = Guid.NewGuid().ToString();
+
             await _commandRepository.AddAsync(uniformChartOfAccount);
             await _unitOfWork.SaveChangesAsync();
         }

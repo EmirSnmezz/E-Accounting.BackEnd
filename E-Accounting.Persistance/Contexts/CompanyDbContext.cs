@@ -1,4 +1,5 @@
-﻿using E_Accounting.Domain.Entities.App_Entites;
+﻿using E_Accounting.Domain.Common;
+using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Persistance.AssemblyReferance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -55,6 +56,24 @@ namespace E_Accounting.Persistance.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyManager).Assembly); // bu kod sayesinde DbSet'leri tek tek elimizle girmek zorunda kalmıyoruz
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entities = ChangeTracker.Entries<BaseEntity>();
+            foreach (var entity in entities)
+            {
+                if (entity.State == EntityState.Added)
+                {
+                    entity.Property(p => p.CreatedDate).CurrentValue = DateTime.Now;
+                }
+
+                if(entity.State == EntityState.Modified)
+                {
+                    entity.Property(p => p.UpdatedDate).CurrentValue = DateTime.Now;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
         }
 
         public class CompanyDbContextFactory : IDesignTimeDbContextFactory<CompanyDbContext>

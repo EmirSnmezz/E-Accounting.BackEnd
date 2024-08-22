@@ -2,13 +2,7 @@
 using E_Accounting.Domain.Common;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Repositories.BaseRepositories
 {
@@ -28,34 +22,60 @@ namespace E_Accounting.Persistance.Repositories.BaseRepositories
 
             if (!isTracking)
             {
-             query.AsNoTracking();
+                query.AsNoTracking();
             }
 
             return query;
 
         }
 
-        public async Task<T> GetById(string id)
+        public async Task<T> GetById(string id, bool isTracking = true)
         {
             T data = await Table.FindAsync(id);
+
+            if (!isTracking)
+            {
+                var query = await Table.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+                return query;
+            }
             return data;
         }
 
-        public async Task<T> GetFirst()
+        public async Task<T> GetFirst(bool isTracking = true)
         {
-           T data = await Table.FirstAsync(); // tablodaki ilk kaydı getirecek
+            if(!isTracking)
+            {
+                var query =  await Table.AsNoTracking().FirstAsync();
+                return query;
+            }
+
+            T data = await Table.FirstAsync(); // tablodaki ilk kaydı getirecek
             return data;
         }
 
-        public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate)
+        public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> predicate, bool isTracking = true)
         {
+            Table.AsQueryable();
             T data = await Table.FirstAsync(predicate);
+            if (!isTracking)
+            {
+                var query = await Table.AsNoTracking().FirstOrDefaultAsync(predicate);
+                return query;
+            }
             return data;
         }
 
-        public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate, bool isTracking = true)
         {
-           IQueryable<T> query = Table.Where(predicate);
+            Table.AsQueryable();
+            IQueryable<T> query = Table.Where(predicate);
+
+            if (!isTracking)
+            {
+                query.AsNoTracking();
+                return query;
+            }
+
             return query;
         }
     }
