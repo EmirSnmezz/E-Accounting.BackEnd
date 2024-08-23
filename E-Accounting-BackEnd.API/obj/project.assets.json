@@ -2203,6 +2203,20 @@
           "bin/placeholder/E-Accounting-BackEnd.Domain.dll": {}
         }
       },
+      "E-Accounting-BackEnd.Infrastructer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "E-Accounting-BackEnd.Application": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "7.1.2"
+        },
+        "compile": {
+          "bin/placeholder/E-Accounting-BackEnd.Infrastructer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/E-Accounting-BackEnd.Infrastructer.dll": {}
+        }
+      },
       "E-Accounting-BackEnd.Persistance/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5592,6 +5606,11 @@
       "path": "../E-Accounting.Domain/E-Accounting-BackEnd.Domain.csproj",
       "msbuildProject": "../E-Accounting.Domain/E-Accounting-BackEnd.Domain.csproj"
     },
+    "E-Accounting-BackEnd.Infrastructer/1.0.0": {
+      "type": "project",
+      "path": "../E-Accounting-BackEnd.Infrastructer/E-Accounting-BackEnd.Infrastructer.csproj",
+      "msbuildProject": "../E-Accounting-BackEnd.Infrastructer/E-Accounting-BackEnd.Infrastructer.csproj"
+    },
     "E-Accounting-BackEnd.Persistance/1.0.0": {
       "type": "project",
       "path": "../E-Accounting.Persistance/E-Accounting-BackEnd.Persistance.csproj",
@@ -5608,6 +5627,7 @@
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "E-Accounting-BackEnd.Application >= 1.0.0",
+      "E-Accounting-BackEnd.Infrastructer >= 1.0.0",
       "E-Accounting-BackEnd.Persistance >= 1.0.0",
       "E-Accounting-BackEnd.Presentation >= 1.0.0",
       "MediatR >= 12.4.0",
@@ -5648,6 +5668,9 @@
           "projectReferences": {
             "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounted-BackEnd.Presentation\\E-Accounting-BackEnd.Presentation.csproj": {
               "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounted-BackEnd.Presentation\\E-Accounting-BackEnd.Presentation.csproj"
+            },
+            "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting-BackEnd.Infrastructer\\E-Accounting-BackEnd.Infrastructer.csproj": {
+              "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting-BackEnd.Infrastructer\\E-Accounting-BackEnd.Infrastructer.csproj"
             },
             "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj": {
               "projectPath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj"

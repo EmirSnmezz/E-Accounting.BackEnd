@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Accounted-BackEnd.Presentation\E-Accounting-BackEnd.Presentation.csproj" />
+    <ProjectReference Include="..\E-Accounting-BackEnd.Infrastructer\E-Accounting-BackEnd.Infrastructer.csproj" />
     <ProjectReference Include="..\E-Accounting.Application\E-Accounting-BackEnd.Application.csproj" />
     <ProjectReference Include="..\E-Accounting.Persistance\E-Accounting-BackEnd.Persistance.csproj" />
   </ItemGroup>
