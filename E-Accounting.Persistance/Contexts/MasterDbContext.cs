@@ -1,6 +1,7 @@
 ﻿using E_Accounting.Domain.Common;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -45,7 +46,14 @@ namespace E_Accounting.Persistance.Contexts
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Ignore<IdentityUserLogin<string>>();
+            builder.Ignore<IdentityUserRole<string>>();
+            builder.Ignore<IdentityUserClaim<string>>();
+            builder.Ignore<IdentityUserToken<string>>();
+            builder.Ignore<IdentityRoleClaim<string>>();
+        }
         public class MasterDbDesignTimeFactory : IDesignTimeDbContextFactory<MasterDbContext>
         {
             public MasterDbContext CreateDbContext(string[] args)

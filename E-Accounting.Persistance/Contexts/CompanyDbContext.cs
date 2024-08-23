@@ -58,6 +58,7 @@ namespace E_Accounting.Persistance.Contexts
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyManager).Assembly); // bu kod sayesinde DbSet'leri tek tek elimizle girmek zorunda kalmıyoruz
         }
 
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var entities = ChangeTracker.Entries<BaseEntity>();

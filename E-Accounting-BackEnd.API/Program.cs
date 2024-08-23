@@ -40,8 +40,7 @@ using (var scoped = app.Services.CreateScope())
             UserFirstAndLastName = "emrsnmezz",
             Email = "emircan_snmez@outlook.com",
             Id = Guid.NewGuid().ToString(),
-        },"Password12"
-            ).Wait();
+        }, "Password12").Wait();
     }
         
 }
