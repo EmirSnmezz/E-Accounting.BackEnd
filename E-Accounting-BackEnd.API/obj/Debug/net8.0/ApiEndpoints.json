@@ -43,6 +43,22 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
+    "Method": "RemoveRole",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.Role_Features.Commands.RemoveRole.RemoveRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
     "Method": "CreateRole",
     "RelativePath": "api/Roles/CreateRole",
     "HttpMethod": "POST",
@@ -65,6 +81,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
+    "Method": "UpdateRole",
+    "RelativePath": "api/Roles/UpdateRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.Role_Features.Commands.UpdateRole.UpdateRoleRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
