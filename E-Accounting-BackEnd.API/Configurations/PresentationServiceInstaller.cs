@@ -35,7 +35,7 @@ namespace E_Accounting_BackEnd.API.Configurations
             };
             setup.AddSecurityDefinition(jwtSecuritySheme.Reference.Id, jwtSecuritySheme);
             setup.AddSecurityRequirement(new OpenApiSecurityRequirement()
-{
+            {
         {jwtSecuritySheme, Array.Empty<string>() }
 });
         });

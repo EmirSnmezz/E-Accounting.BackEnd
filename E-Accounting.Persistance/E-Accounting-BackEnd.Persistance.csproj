@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\DesignTimeFactories\" />
+    <Folder Include="Migrations\CompanyDb\" />
     <Folder Include="Registrations\" />
   </ItemGroup>
 

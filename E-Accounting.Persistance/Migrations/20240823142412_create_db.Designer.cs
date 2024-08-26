@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Accounting.Persistance.Migrations
 {
     [DbContext(typeof(MasterDbContext))]
-    [Migration("20240823124726_Tables_removing_of_Identity")]
-    partial class Tables_removing_of_Identity
+    [Migration("20240823142412_create_db")]
+    partial class create_db
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
