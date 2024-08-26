@@ -9,6 +9,7 @@ namespace E_Accounting.Application.Features.Role_Features
 {
     public class CreateRoleRequest: IRequest<CreateRoleResponse>
     {
+        public string Code { get; set; }
         public string Name { get; set; }
     }
 }

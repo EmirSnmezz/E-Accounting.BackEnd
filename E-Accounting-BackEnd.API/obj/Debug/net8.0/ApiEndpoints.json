@@ -58,6 +58,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/Roles/GetAllRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
     "Method": "CreateUCAF",
     "RelativePath": "api/UCAFS/CreateUCAF",

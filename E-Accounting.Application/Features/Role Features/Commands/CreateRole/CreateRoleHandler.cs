@@ -1,6 +1,7 @@
 ﻿using E_Accounting.Domain.Entities.App_Entites.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,20 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Application.Features.Role_Features
 {
-    public class CreateRoleHandler : IRequestHandler<CreateRoleRequest, CreateRoleResponse>
+    public sealed class CreateRoleHandler : IRequestHandler<CreateRoleRequest, CreateRoleResponse>
     {
         private readonly RoleManager<AppRole> _roleManager;
 
         public CreateRoleHandler(RoleManager<AppRole> roleManager)
         {
-            _roleManager = roleManager;    
+            _roleManager = roleManager;
         }
 
 
         public async Task<CreateRoleResponse> Handle(CreateRoleRequest request, CancellationToken cancellationToken)
         {
-            AppRole role = await _roleManager.FindByIdAsync(request.Name);
-
-            if (role != null)
+            AppRole role = await _roleManager.Roles.Where(p => p.Code == request.Code).FirstOrDefaultAsync();
+            if(role != null)
             {
                 throw new Exception("Bu rol daha önce eklenmiş");
             }
@@ -32,6 +32,7 @@ namespace E_Accounting.Application.Features.Role_Features
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = request.Name,
+                Code = request.Code
             };
 
             await _roleManager.CreateAsync(role);

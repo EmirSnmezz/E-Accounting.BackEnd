@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.Role_Features;
+using E_Accounting.Application.Features.Role_Features.Queries.GetAllRoles;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,14 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         {
             var response = await _mediator.Send(request);
             return Ok(response);
+        }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllRoles()
+        {
+            GetAllRolesRequest request = new();
+            GetAllRolesResponse response = await _mediator.Send(request);
+            return Ok(response);
         }
     }
 }
