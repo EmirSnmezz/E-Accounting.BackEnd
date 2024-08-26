@@ -157,3 +157,4 @@ C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\De
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\E-Accounting-BackEnd.Application.pdb
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\E-Accounting-BackEnd.Infrastructer.dll
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\E-Accounting-BackEnd.Infrastructer.pdb
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\Newtonsoft.Json.dll

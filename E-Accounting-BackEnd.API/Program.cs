@@ -1,6 +1,7 @@
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting_BackEnd.API.Configurations;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;
+using E_Accounting_BackEnd.API.Middleware;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionMiddleware();
 
 app.UseAuthorization();
 

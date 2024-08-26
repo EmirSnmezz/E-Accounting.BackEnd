@@ -1,5 +1,6 @@
 ﻿using E_Accounting.Persistance.AssemblyReferance;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;
+using E_Accounting_BackEnd.API.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
@@ -9,6 +10,8 @@ namespace E_Accounting_BackEnd.API.Configurations
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<ExceptionMiddleware>();
+
             services.AddControllers().AddApplicationPart(typeof(AssemblyManager).Assembly);
 
             services.AddSwaggerGen(setup => // Swager yapılanmasını özelleştirmek için bir lambda ifadesi kullandık
