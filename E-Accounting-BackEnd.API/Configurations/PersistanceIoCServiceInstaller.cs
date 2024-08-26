@@ -7,6 +7,7 @@ using E_Accounting.Persistance.AssemblyReferance;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Persistance.Service.CompanyService;
 using E_Accounting.Persistance.Service.MasterService;
+using E_Accounting.Persistance.Service.Role_Service;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;
 
 namespace E_Accounting_BackEnd.API.Configurations
@@ -23,6 +24,7 @@ namespace E_Accounting_BackEnd.API.Configurations
             #region Services
             services.AddScoped<IUCAFService, UCAFService>();
             services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IRoleService, RoleService>();
             #endregion
 
             #region Repositories

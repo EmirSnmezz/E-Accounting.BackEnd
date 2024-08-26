@@ -1,4 +1,5 @@
-﻿using E_Accounting.Domain.Entities.App_Entites.Identity;
+﻿using E_Accounting.Application.Services.MasterService;
+using E_Accounting.Domain.Entities.App_Entites.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -11,16 +12,16 @@ namespace E_Accounting.Application.Features.Role_Features.Commands.RemoveRole
 {
     public sealed class RemoveRoleHandler : IRequestHandler<RemoveRoleRequest, RemoveRoleResponse>
     {
-        private readonly RoleManager<AppRole> _roleManager;
+        private readonly IRoleService _roleManager;
 
-        public RemoveRoleHandler(RoleManager<AppRole> roleManager)
+        public RemoveRoleHandler(IRoleService roleManager)
         {
             _roleManager = roleManager;
         }
 
         public async Task<RemoveRoleResponse> Handle(RemoveRoleRequest request, CancellationToken cancellationToken)
         {
-            AppRole role = await _roleManager.FindByIdAsync(request.Id);
+            AppRole role = _roleManager.GetByIdAsync(request.Id).Result;
 
             if (role == null)
             {
