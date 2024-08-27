@@ -8,7 +8,7 @@ namespace E_Accounting_BackEnd.API.Configurations
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateCompanyHandler).GetTypeInfo().Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateCompanyCommandHandler).GetTypeInfo().Assembly));
         }
     }
 }

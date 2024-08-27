@@ -18,17 +18,17 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateCompany(CreateCompanyRequest request)
+        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request)
         {
-            CreateCompanyResponse response = await _mediator.Send(request);
+            CreateCompanyCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> MigrateCompanyDatabases()
         {
-            MigrateDatabaseCompanyRequest request = new();
-            MigrateDatabaseCompanyResponse response = await _mediator.Send(request);
+            MigrateDatabaseCommand request = new();
+            MigrateDatabaseCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

@@ -15,7 +15,7 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateRole(CreateRoleRequest request)
+        public async Task<IActionResult> CreateRole(CreateRoleCommand request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
@@ -24,22 +24,22 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllRoles()
         {
-            GetAllRolesRequest request = new();
-            GetAllRolesResponse response = await _mediator.Send(request);
+            GetAllRolesQuery request = new();
+            GetAllRolesQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> UpdateRole(UpdateRoleRequest request)
+        public async Task<IActionResult> UpdateRole(UpdateRoleCommand request)
         {
-            UpdateRoleResponse response = await _mediator.Send(request);
+            UpdateRoleCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> RemoveRole(RemoveRoleRequest request)
+        public async Task<IActionResult> RemoveRole(RemoveRoleCommand request)
         {
-            RemoveRoleResponse response = await _mediator.Send(request);
+            RemoveRoleCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 

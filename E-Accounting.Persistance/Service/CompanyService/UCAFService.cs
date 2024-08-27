@@ -28,7 +28,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _mapper = mapper;
         }
 
-        public async Task CreateUcafAsync(CreateUCAFRequest request)
+        public async Task CreateUcafAsync(CreateUCAFCommand request)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(request.CompanyId);
             _commandRepository.SetDbContextInstance(_companyDbContext);

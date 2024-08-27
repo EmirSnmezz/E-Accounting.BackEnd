@@ -158,3 +158,5 @@ C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\De
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\E-Accounting-BackEnd.Infrastructer.dll
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\E-Accounting-BackEnd.Infrastructer.pdb
 C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\emirc\source\repos\E-Accounting.BackEnd\E-Accounting-BackEnd.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

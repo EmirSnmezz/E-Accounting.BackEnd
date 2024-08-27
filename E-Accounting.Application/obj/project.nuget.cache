@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Vs2wNnDHe78=",
+  "dgSpecHash": "3cWxFkircWk=",
   "success": true,
   "projectFilePath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounting.Application\\E-Accounting-BackEnd.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\emirc\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\mediatr\\12.4.0\\mediatr.12.4.0.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.8\\microsoft.aspnetcore.cryptography.internal.8.0.8.nupkg.sha512",

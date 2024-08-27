@@ -17,9 +17,9 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Login(LoginRequest loginRequest)
+        public async Task<IActionResult> Login(LoginCommand loginRequest)
         {
-            LoginResponse response = await _mediator.Send(loginRequest);
+            LoginCommandResponse response = await _mediator.Send(loginRequest);
             return Ok(response);
         }
     }
