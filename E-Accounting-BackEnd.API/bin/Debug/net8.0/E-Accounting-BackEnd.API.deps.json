@@ -1531,6 +1531,7 @@
       "E-Accounting-BackEnd.Application/1.0.0": {
         "dependencies": {
           "E-Accounting-BackEnd.Domain": "1.0.0",
+          "FluentValidation": "11.9.2",
           "MediatR": "12.4.0"
         },
         "runtime": {

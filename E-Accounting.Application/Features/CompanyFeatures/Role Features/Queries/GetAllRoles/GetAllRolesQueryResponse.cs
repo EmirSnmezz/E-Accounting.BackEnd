@@ -9,6 +9,6 @@ namespace E_Accounting.Application.Features.Role_Features.Queries.GetAllRoles
 {
     public record GetAllRolesQueryResponse
         (
-            IList<AppRole> Roles
+            IQueryable<AppRole> Roles
         );
 }

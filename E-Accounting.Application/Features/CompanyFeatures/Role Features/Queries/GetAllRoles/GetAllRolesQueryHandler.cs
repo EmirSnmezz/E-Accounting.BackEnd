@@ -27,7 +27,7 @@ namespace E_Accounting.Application.Features.Role_Features.Queries.GetAllRoles
                 throw new Exception("Görüntülenecek Rol Kaydı Bulunamadı");
             }
 
-            return new  GetAllRolesQueryResponse();
+            return new(roles);
 
         }
     }

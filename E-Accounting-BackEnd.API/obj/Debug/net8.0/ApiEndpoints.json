@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "loginRequest",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.LoginRequest",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.LoginCommand",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany.CreateCompanyRequest",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany.CreateCompanyCommand",
         "IsRequired": true
       }
     ],
@@ -51,7 +51,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.Role_Features.CreateRoleRequest",
+        "Type": "E_Accounting.Application.Features.Role_Features.CreateRoleCommand",
         "IsRequired": true
       }
     ],
@@ -77,7 +77,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.Role_Features.Commands.RemoveRole.RemoveRoleRequest",
+        "Type": "E_Accounting.Application.Features.Role_Features.Commands.RemoveRole.RemoveRoleCommand",
         "IsRequired": true
       }
     ],
@@ -93,7 +93,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.Role_Features.Commands.UpdateRole.UpdateRoleRequest",
+        "Type": "E_Accounting.Application.Features.Role_Features.Commands.UpdateRole.UpdateRoleCommand",
         "IsRequired": true
       }
     ],
@@ -109,7 +109,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF.CreateUCAFRequest",
+        "Type": "E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF.CreateUCAFCommand",
         "IsRequired": true
       }
     ],
