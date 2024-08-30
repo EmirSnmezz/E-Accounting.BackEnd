@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login
+namespace E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands
 {
     public class LoginCommandValidator : AbstractValidator<LoginCommand>
     {

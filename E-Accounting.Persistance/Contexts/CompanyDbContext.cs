@@ -20,7 +20,7 @@ namespace E_Accounting.Persistance.Contexts
         {
             if(company != null)
             {
-                if (company.UserId == "")
+                if (company.ServerUserId == "")
                 {
                     _connectionString =
                     $"Data Source={company.ServerName};" +
@@ -37,8 +37,8 @@ namespace E_Accounting.Persistance.Contexts
                     _connectionString =
                    $"Data Source={company.ServerName};" +
                    $"Initial Catalog={company.DatabaseName};" +
-                   $"User Id={company.UserId}" +
-                   $"Password={company.Password}" +
+                   $"User Id={company.ServerUserId}" +
+                   $"Password={company.ServerPassword}" +
                    $"Integrated Security=True;" +
                    $"Connect Timeout=30;" +
                    $"Encrypt=True;" +

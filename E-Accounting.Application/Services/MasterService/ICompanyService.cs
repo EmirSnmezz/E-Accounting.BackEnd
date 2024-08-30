@@ -6,7 +6,7 @@ namespace E_Accounting.Application.Services.MasterService
 {
     public interface ICompanyService
     {
-        Task CreateCompany ( CreateCompanyCommand request );
+        Task CreateCompany ( CreateCompanyCommand request, CancellationToken cancellationToken);
         Task MigrateCompanyDatabase();
         Task <Company?> GetCompanyByName ( string companyName );
     }

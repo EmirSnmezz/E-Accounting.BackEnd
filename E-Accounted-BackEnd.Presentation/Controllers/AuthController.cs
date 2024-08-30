@@ -1,5 +1,5 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
-using E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login;
+using E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;

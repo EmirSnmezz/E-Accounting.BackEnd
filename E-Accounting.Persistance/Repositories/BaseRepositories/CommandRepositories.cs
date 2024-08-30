@@ -21,15 +21,15 @@ namespace E_Accounting.Persistance.Repositories.BaseRepositories
         {
             _context = (CompanyDbContext)context;
         }
-        public async Task AddAsync(T entity)
+        public async Task AddAsync(T entity, CancellationToken cancellationToken)
         {
-            EntityEntry<T> entityEntry = await Table.AddAsync(entity);
+            EntityEntry<T> entityEntry = await Table.AddAsync(entity, cancellationToken);
             entityEntry.State = EntityState.Added;
         }
 
-        public async Task AddRangeAsync(IEnumerable<T> entities)
+        public async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken)
         {
-            await Table.AddRangeAsync(entities);
+            await Table.AddRangeAsync(entities, cancellationToken);
         }
 
         public void Remove(T entity)

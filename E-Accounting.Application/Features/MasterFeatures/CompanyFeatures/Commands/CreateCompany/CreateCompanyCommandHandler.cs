@@ -23,7 +23,7 @@ namespace E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Comma
         {
             Company company = await _companyService.GetCompanyByName(request.Name);
             if (company != null) throw new Exception("Bu isime sahip şirket zaten daha önce kaydedilmiş");
-            await _companyService.CreateCompany(request);
+            await _companyService.CreateCompany(request, cancellationToken);
             return new();
         }
     }

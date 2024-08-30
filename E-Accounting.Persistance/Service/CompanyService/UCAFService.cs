@@ -28,7 +28,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _mapper = mapper;
         }
 
-        public async Task CreateUcafAsync(CreateUCAFCommand request)
+        public async Task CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(request.CompanyId);
             _commandRepository.SetDbContextInstance(_companyDbContext);
@@ -36,8 +36,8 @@ namespace E_Accounting.Persistance.Service.CompanyService
             UniformChartOfAccount uniformChartOfAccount = _mapper.Map<UniformChartOfAccount>(request);
             uniformChartOfAccount.Id = Guid.NewGuid().ToString();
 
-            await _commandRepository.AddAsync(uniformChartOfAccount);
-            await _unitOfWork.SaveChangesAsync();
+            await _commandRepository.AddAsync(uniformChartOfAccount, cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
     }
 }

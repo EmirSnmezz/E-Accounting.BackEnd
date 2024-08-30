@@ -13,14 +13,14 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
 {
     public class CompainiesController : ApiController
     {
-        public CompainiesController(IMediator mediator) : base(mediator) 
+        public CompainiesController(IMediator mediator) : base(mediator)
         {
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request)
+        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request, CancellationToken cancellationToken)
         {
-            CreateCompanyCommandResponse response = await _mediator.Send(request);
+            CreateCompanyCommandResponse response = await _mediator.Send(request, cancellationToken);
             return Ok(response);
         }
 

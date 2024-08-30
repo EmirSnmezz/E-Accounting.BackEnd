@@ -5,7 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login
+namespace E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands
 {
     public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginCommandResponse>
     {
