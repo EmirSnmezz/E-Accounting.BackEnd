@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "loginRequest",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.LoginCommand",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands.LoginCommand",
         "IsRequired": true
       }
     ],

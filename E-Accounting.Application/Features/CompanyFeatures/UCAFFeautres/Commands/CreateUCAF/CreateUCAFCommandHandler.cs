@@ -1,5 +1,6 @@
 ﻿using E_Accounting.Application.Messaging;
 using E_Accounting.Application.Services.CompanyService;
+using E_Accounting.Domain.Entities.CompanyEntities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,12 @@ namespace E_Accounting.Application.Features.Company_Features.UCAFFeautres.Comman
         }
         public async Task<CreateUCAFCommandResponse> Handle(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
+            UniformChartOfAccount UCAF = await _ucafService.GetByCode(request.Code);
+
+            if (UCAF != null)
+            {
+                throw new Exception("İlgili Koda Sahip Hesap Kaydı Kayıt İşlemi Daha Önce Gerçekleştirilmiş..");
+            }
             await _ucafService.CreateUcafAsync(request, cancellationToken);
             return new();
         }

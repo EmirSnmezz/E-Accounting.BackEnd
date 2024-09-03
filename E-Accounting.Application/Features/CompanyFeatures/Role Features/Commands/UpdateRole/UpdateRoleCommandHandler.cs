@@ -30,7 +30,7 @@ namespace E_Accounting.Application.Features.Role_Features.Commands.UpdateRole
 
             if (role.Code != request.Code)
             {
-                AppRole checkCode = await _roleManager.GetByIdAsync(request.Id);
+                AppRole checkCode = await _roleManager.GetByUCAFCode(request.Code);
                 if (checkCode != null)
                     throw new Exception("Bu Rol Daha Önce Kaydedilmiş!");
             }

@@ -18,13 +18,31 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Role
         [Fact]
         public async Task AppRoleShouldNotBeNull()
         {
-            var result = _roleServiceMock.Setup(x => x.GetByIdAsync(It.IsAny<string>())).ReturnsAsync(new AppRole());
+            var result = _roleServiceMock.
+                                          Setup(x => x.
+                                          GetByIdAsync(It.IsAny<string>()))
+                                          .ReturnsAsync(new AppRole());
         }
 
-        //[Fact]
-        //public async Task UpdateRoleCommandResponseShouldBeNotNull()
-        //{
+        [Fact]
+        public async Task AppRoleCodeShouldBeUniqe()
+        {
+            AppRole checkRoleCode = await _roleServiceMock.Object.GetByUCAFCode("UCAF.Create");
+            checkRoleCode.ShouldBeNull(); // ShouldBeNull methodu, bir değerin boş olması gerektiğini, ShouldNotBeNull ise bir değerin boş olmaması gerektiğini söyler.
+        }
 
-        //}
+        [Fact]
+        public async Task UpdateRoleCommandResponseShouldNotBeNull()
+        {
+            var command = new UpdateRoleCommand("Hesap Planı Kaydı Test", "afc50813-66e7-438f-aed1-e53427c5d96c", "UCAF.Create");
+            _roleServiceMock.Setup(x => x 
+                            .GetByIdAsync(It.IsAny<string>()))    /// Setup ile bir db ye bağlanıp veri varmış gibi yapıp null hatasını atlattık
+                            .ReturnsAsync(new AppRole()); 
+
+            UpdateRoleCommandHandler handler = new UpdateRoleCommandHandler(_roleServiceMock.Object);
+            UpdateRoleCommandResponse response = await handler.Handle(command, default);
+            response.ShouldNotBeNull();
+            response.Message.ShouldNotBeEmpty();
+        }
     }
 }

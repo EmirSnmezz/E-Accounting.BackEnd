@@ -23,4 +23,4 @@ namespace E_Accounting.Persistance
             return new CompanyDbContext(company);
         }
     }
-}
+}                           

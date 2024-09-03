@@ -140,6 +140,10 @@
               "target": "Package",
               "version": "[4.2.1, )"
             },
+            "System.Linq.Queryable": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"

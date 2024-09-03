@@ -3,6 +3,7 @@ using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Services.CompanyService;
+using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.CompanyEntities;
 using E_Accounting.Persistance.Contexts;
 using System;
@@ -17,12 +18,14 @@ namespace E_Accounting.Persistance.Service.CompanyService
     {
         private readonly IUCAFCommandRepository _commandRepository;
         private readonly IContextService _contextService;
+        private readonly IUCAFQueryRepository _ıUcafQueryRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private CompanyDbContext _companyDbContext;
-        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, IUnitOfWork unitOfWork, IMapper mapper)
+        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, IUnitOfWork unitOfWork, IMapper mapper, IUCAFQueryRepository ıUcafQueryRepository)
         {
             _commandRepository = commandRepository;
+            _ıUcafQueryRepository = ıUcafQueryRepository;
             _contextService = contextService;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -38,6 +41,11 @@ namespace E_Accounting.Persistance.Service.CompanyService
 
             await _commandRepository.AddAsync(uniformChartOfAccount, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<UniformChartOfAccount> GetByCode(string code)
+        {
+            return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code);
         }
     }
 }

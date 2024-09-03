@@ -25,10 +25,10 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.CompanyFeatures.Comm
         [Fact]
         public async Task CreateCompanyCommandResponseShouldNotBeNull()
         {
-            var command = new CreateCompanyCommand(Name: "DkMotors", 
+            var command = new CreateCompanyCommand(Name: "DkMotorss", 
                                                    ServerName:"TestServer", 
                                                    DatabaseName:"TestName", 
-                                                   UserId: "TestUser", 
+                                                   UserId: "TestUsers", 
                                                    Password: "TestPassword");
             
             var handler = new CreateCompanyCommandHandler(_companyService.Object);

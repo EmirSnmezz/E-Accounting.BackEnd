@@ -24,7 +24,7 @@ namespace E_Accounting.Application.Behavior
         {
             if (!_validators.Any())
             {
-                return await next(); // burada dedik ki eğer _validators içerisinde tanımlı bir validasyon işlemimiz yoksa await ile beraber next diyerek bizim işlemimizi devam ettirsin yani bir sonraki yapıya versim
+                return await next(); // burada dedik ki eğer _validators içerisinde tanımlı bir validasyon işlemimiz yoksa await ile beraber next diyerek bizim işlemimizi devam ettirsin yani bir sonraki yapıya versin
             }
 
             var context = new ValidationContext<TRequest>(request); // validasyon kurallarına takılan tüm errorleri liste formatında tutuyoruz
