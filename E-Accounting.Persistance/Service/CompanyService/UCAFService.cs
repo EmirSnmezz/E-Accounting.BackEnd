@@ -3,14 +3,9 @@ using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Services.CompanyService;
-using E_Accounting.Domain.Entities.App_Entites;
+using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.CompanyEntities;
 using E_Accounting.Persistance.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Service.CompanyService
 {
@@ -19,10 +14,10 @@ namespace E_Accounting.Persistance.Service.CompanyService
         private readonly IUCAFCommandRepository _commandRepository;
         private readonly IContextService _contextService;
         private readonly IUCAFQueryRepository _ıUcafQueryRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ICompanyUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private CompanyDbContext _companyDbContext;
-        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, IUnitOfWork unitOfWork, IMapper mapper, IUCAFQueryRepository ıUcafQueryRepository)
+        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, ICompanyUnitOfWork unitOfWork, IMapper mapper, IUCAFQueryRepository ıUcafQueryRepository)
         {
             _commandRepository = commandRepository;
             _ıUcafQueryRepository = ıUcafQueryRepository;
@@ -34,7 +29,6 @@ namespace E_Accounting.Persistance.Service.CompanyService
         public async Task CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(request.CompanyId);
-            _commandRepository.SetDbContextInstance(_companyDbContext);
             _unitOfWork.SetDbContextInstance(_companyDbContext);
             UniformChartOfAccount uniformChartOfAccount = _mapper.Map<UniformChartOfAccount>(request);
             uniformChartOfAccount.Id = Guid.NewGuid().ToString();

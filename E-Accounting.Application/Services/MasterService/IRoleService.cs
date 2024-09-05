@@ -13,6 +13,7 @@ namespace E_Accounting.Application.Services.MasterService
     public interface IRoleService
     {
         Task AddAsync(CreateRoleCommand request);
+        Task AddRangeAsync(IEnumerable<AppRole> roles);
         Task UpdateAsync(AppRole role);
         Task DeleteAsync(AppRole role);
         Task<IQueryable<AppRole>> GettAllRolesAsync();

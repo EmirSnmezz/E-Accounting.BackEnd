@@ -25,7 +25,7 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Role
         {
             _roleServiceMock.Setup(x => x
                             .GetByIdAsync(It.IsAny<string>()))
-                            .ReturnsAsync(new AppRole());
+                            .ReturnsAsync(new AppRole("test", "test", "test"));
         }
 
 
@@ -37,7 +37,7 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Role
 
             _roleServiceMock.Setup(
                             x => x.GetByIdAsync(It.IsAny<string>()))
-                            .ReturnsAsync(new AppRole());
+                            .ReturnsAsync(new AppRole("test", "test", "test"));
 
             RemoveRoleCommandHandler handler = new RemoveRoleCommandHandler(_roleServiceMock.Object);
 

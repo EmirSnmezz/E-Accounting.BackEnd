@@ -21,7 +21,7 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Role
             var result = _roleServiceMock.
                                           Setup(x => x.
                                           GetByIdAsync(It.IsAny<string>()))
-                                          .ReturnsAsync(new AppRole());
+                                          .ReturnsAsync(new AppRole("test", "test", "test"));
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Role
             var command = new UpdateRoleCommand("Hesap Planı Kaydı Test", "afc50813-66e7-438f-aed1-e53427c5d96c", "UCAF.Create");
             _roleServiceMock.Setup(x => x 
                             .GetByIdAsync(It.IsAny<string>()))    /// Setup ile bir db ye bağlanıp veri varmış gibi yapıp null hatasını atlattık
-                            .ReturnsAsync(new AppRole()); 
+                            .ReturnsAsync(new AppRole("test", "test", "test")); 
 
             UpdateRoleCommandHandler handler = new UpdateRoleCommandHandler(_roleServiceMock.Object);
             UpdateRoleCommandResponse response = await handler.Handle(command, default);

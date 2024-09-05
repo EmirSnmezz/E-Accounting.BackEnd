@@ -27,6 +27,8 @@ namespace E_Accounting.Persistance.Contexts
 
         public DbSet<Company> Companies { get; set; }
         public DbSet<UserAndCompanyRelationship> UserAndCompanyRelationships {get; set;}
+        public DbSet<MainRole> MainRoles { get; set; }
+        public DbSet<MainRoleAndRoleRelationship> MainRoleAndRoleRelationships { get; set; }
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
@@ -35,12 +37,12 @@ namespace E_Accounting.Persistance.Contexts
             {
                 if(entry.State == EntityState.Added)
                 {
-                    entry.Property(p => p.CreatedDate).CurrentValue = DateTime.Now;
+                    entry.Property(p => p.CreatedDate).CurrentValue = DateTime.UtcNow;
                 }
 
                 if(entry.State == EntityState.Modified)
                 {
-                    entry.Property(p => p.UpdatedDate).CurrentValue = DateTime.Now;
+                    entry.Property(p => p.UpdatedDate).CurrentValue = DateTime.UtcNow;
                 }
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);

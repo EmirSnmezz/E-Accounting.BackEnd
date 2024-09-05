@@ -1,4 +1,4 @@
-﻿using E_Accounting.Application.Abstraction.Repositories.Base_Entites;
+﻿using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Domain.Entities.CompanyEntities;
 using System;
 using System.Collections.Generic;

@@ -57,5 +57,13 @@ namespace E_Accounting.Persistance.Service.Role_Service
             AppRole role = await _roleManager.FindByIdAsync(UCAFCode);
             return role;
         }
+
+        public async Task AddRangeAsync(IEnumerable<AppRole> roles)
+        {
+            foreach (var role in roles)
+            {
+                await _roleManager.CreateAsync(role);
+            }
+        }
     }
 }

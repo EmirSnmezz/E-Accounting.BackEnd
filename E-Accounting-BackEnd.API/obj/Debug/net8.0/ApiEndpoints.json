@@ -43,6 +43,16 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
+    "Method": "CreateAllRoles",
+    "RelativePath": "api/Roles/CreateAllRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
     "Method": "CreateRole",
     "RelativePath": "api/Roles/CreateRole",
     "HttpMethod": "POST",

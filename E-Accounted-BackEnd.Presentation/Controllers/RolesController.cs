@@ -1,4 +1,5 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
+using E_Accounting.Application.Features.CompanyFeatures.Role_Features.CreateAllRoles;
 using E_Accounting.Application.Features.Role_Features;
 using E_Accounting.Application.Features.Role_Features.Commands.RemoveRole;
 using E_Accounting.Application.Features.Role_Features.Commands.UpdateRole;
@@ -17,6 +18,14 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateRole(CreateRoleCommand request)
         {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> CreateAllRoles()
+        {
+            var request = new CreateAllRolesCommand();
             var response = await _mediator.Send(request);
             return Ok(response);
         }

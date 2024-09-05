@@ -1,15 +1,14 @@
-﻿using E_Accounting.Application.Abstraction.Repositories.Base_Entites;
+﻿using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Domain.Entities.App_Entites;
-using E_Accounting.Persistance.Repositories.BaseRepositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using E_Accounting.Persistance.Contexts;
+using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext;
 
 namespace E_Accounting.Persistance.Repositories.Repositories_Of_Entities
 {
-    public class CompanyQueryRepository : QueryRepositories<Company>, IQueryRepository<Company>
+    public class CompanyQueryRepository : MasterQueryRepository<Company>, IQueryRepository<Company>
     {
+        public CompanyQueryRepository(MasterDbContext context) : base(context)
+        {
+        }
     }
 }
