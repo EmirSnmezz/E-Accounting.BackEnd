@@ -29,15 +29,15 @@ namespace E_Accounting.Application.Behavior
 
             var context = new ValidationContext<TRequest>(request); // validasyon kurallarına takılan tüm errorleri liste formatında tutuyoruz
             var errorDictionary = _validators.Select(x => x.Validate(context))
-                                             .SelectMany( x=> x.Errors)
-                                             .Where(x => x!= null)
+                                             .SelectMany(x => x.Errors)
+                                             .Where(x => x != null)
                                              .GroupBy(
                                              x => x.PropertyName,
                                              x => x.ErrorMessage, (propertyName, errorMessage) => new
                                              {
                                                  Key = propertyName,
                                                  Values = errorMessage.Distinct().ToList()
-                                             }).ToDictionary(x=> x.Key, x => x.Values[0]);
+                                             }).ToDictionary(x => x.Key, x => x.Values[0]);
 
             if (errorDictionary.Any())
             {
@@ -50,8 +50,7 @@ namespace E_Accounting.Application.Behavior
                 throw new ValidationException(errors);
             }
 
-            return await next();  
-
+            return await next();
         }
     }
 }

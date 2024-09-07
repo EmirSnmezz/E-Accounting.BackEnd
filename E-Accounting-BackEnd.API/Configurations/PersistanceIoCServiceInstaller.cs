@@ -1,4 +1,5 @@
 ﻿using E_Accounting.Application;
+using E_Accounting.Application.Abstraction.Repositories.MainRoleRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.Services.MasterService;
@@ -9,6 +10,7 @@ using E_Accounting.Persistance;
 using E_Accounting.Persistance.Contexts;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.CompanyRepositories;
+using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleRepository;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Persistance.Service.CompanyService;
 using E_Accounting.Persistance.Service.MasterService;
@@ -32,6 +34,7 @@ namespace E_Accounting_BackEnd.API.Configurations
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IUCAFService, UCAFService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IMainRoleService, MainRoleService>();
             #endregion
 
 
@@ -47,6 +50,8 @@ namespace E_Accounting_BackEnd.API.Configurations
             #region MasterDbContext
             services.AddScoped<ICompanyCommandRepository, CompanyCommandRepository>();
             services.AddScoped<ICompanyQueryRepository, CompanyQueryRepository>();
+            services.AddScoped<IMainRoleCommandRepository, MainRoleCommandRepository>();
+            services.AddScoped<IMainRoleQueryRepository, MainRoleQueryRepository>();
             #endregion
 
             #endregion

@@ -1,7 +1,7 @@
 ﻿using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Persistance.Contexts;
-using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext;
+using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.BaseRepositories;
 
 namespace E_Accounting.Persistance.Repositories.Repositories_Of_Entities
 {

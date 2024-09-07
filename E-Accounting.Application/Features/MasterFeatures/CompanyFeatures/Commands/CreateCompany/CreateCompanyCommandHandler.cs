@@ -21,7 +21,7 @@ namespace E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Comma
 
         public async Task<CreateCompanyCommandResponse> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
         {
-            Company? company = await (_companyService.GetCompanyByName(request.Name))!;
+            Company? company = await (_companyService.GetCompanyByName(request.Name, cancellationToken))!;
             if (company != null) throw new Exception("Bu isime sahip şirket zaten daha önce kaydedilmiş");
             await _companyService.CreateCompany(request, cancellationToken);
             return new();

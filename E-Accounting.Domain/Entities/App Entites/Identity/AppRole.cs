@@ -4,6 +4,10 @@ namespace E_Accounting.Domain.Entities.App_Entites.Identity
 {
     public sealed class AppRole : IdentityRole<string>
     {
+        public AppRole()
+        {
+            
+        }
         public AppRole(string title, string code, string name)
         {
             Id = Guid.NewGuid().ToString();

@@ -33,8 +33,54 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Compainies/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
     "Method": "MigrateCompanyDatabases",
     "RelativePath": "api/Compainies/MigrateCompanyDatabases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleController",
+    "Method": "CreateMainRole",
+    "RelativePath": "api/MainRole/CreateMainRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.CreateRole.CreateMainRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleController",
+    "Method": "CreateStaticMainRole",
+    "RelativePath": "api/MainRole/CreateStaticMainRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleController",
+    "Method": "GetAllMainRoles",
+    "RelativePath": "api/MainRole/GetAllMainRoles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

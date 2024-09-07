@@ -12,6 +12,7 @@ namespace E_Accounting.Application.Features.Role_Features
     public record CreateRoleCommand
         (
             string Code,
-            string Name
+            string Name,
+            string Title
         ) : ICommand<CreateRoleCommandResponse>;
 }

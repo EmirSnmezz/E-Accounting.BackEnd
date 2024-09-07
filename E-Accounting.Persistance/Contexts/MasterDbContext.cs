@@ -5,11 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Contexts
 {
@@ -26,7 +21,7 @@ namespace E_Accounting.Persistance.Contexts
         }
 
         public DbSet<Company> Companies { get; set; }
-        public DbSet<UserAndCompanyRelationship> UserAndCompanyRelationships {get; set;}
+        public DbSet<UserAndCompanyRelationship> UserAndCompanyRelationships { get; set; }
         public DbSet<MainRole> MainRoles { get; set; }
         public DbSet<MainRoleAndRoleRelationship> MainRoleAndRoleRelationships { get; set; }
 
@@ -35,14 +30,14 @@ namespace E_Accounting.Persistance.Contexts
             var entries = ChangeTracker.Entries<BaseEntity>();
             foreach (var entry in entries)
             {
-                if(entry.State == EntityState.Added)
+                if (entry.State == EntityState.Added)
                 {
-                    entry.Property(p => p.CreatedDate).CurrentValue = DateTime.UtcNow;
+                    entry.Property(p => p.CreatedDate).CurrentValue = DateTime.Now;
                 }
 
-                if(entry.State == EntityState.Modified)
+                if (entry.State == EntityState.Modified)
                 {
-                    entry.Property(p => p.UpdatedDate).CurrentValue = DateTime.UtcNow;
+                    entry.Property(p => p.UpdatedDate).CurrentValue = DateTime.Now;
                 }
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);

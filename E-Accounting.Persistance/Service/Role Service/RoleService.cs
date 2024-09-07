@@ -1,16 +1,9 @@
 ﻿using AutoMapper;
 using E_Accounting.Application.Features.Role_Features;
-using E_Accounting.Application.Features.Role_Features.Commands.RemoveRole;
-using E_Accounting.Application.Features.Role_Features.Commands.UpdateRole;
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Service.Role_Service
 {
@@ -40,7 +33,7 @@ namespace E_Accounting.Persistance.Service.Role_Service
         {    
             await _roleManager.UpdateAsync(role);
         }
-        public async Task<IQueryable<AppRole>> GettAllRolesAsync()
+        public async Task<IQueryable<AppRole>> GetAllRolesAsync()
         {
             IList<AppRole> roles = await _roleManager.Roles.ToListAsync();
             return roles.AsQueryable<AppRole>();

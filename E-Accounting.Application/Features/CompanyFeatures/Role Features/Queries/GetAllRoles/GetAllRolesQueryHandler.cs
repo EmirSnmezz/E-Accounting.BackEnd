@@ -20,7 +20,7 @@ namespace E_Accounting.Application.Features.Role_Features.Queries.GetAllRoles
         }
         public async Task<GetAllRolesQueryResponse> Handle(GetAllRolesQuery request, CancellationToken cancellationToken)
         {
-            IQueryable<AppRole> roles = await _roleManager.GettAllRolesAsync();
+            IQueryable<AppRole> roles = await _roleManager.GetAllRolesAsync();
 
             if (!roles.Any())
             {

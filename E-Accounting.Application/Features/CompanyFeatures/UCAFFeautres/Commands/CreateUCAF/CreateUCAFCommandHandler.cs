@@ -21,7 +21,7 @@ namespace E_Accounting.Application.Features.Company_Features.UCAFFeautres.Comman
         }
         public async Task<CreateUCAFCommandResponse> Handle(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
-            UniformChartOfAccount UCAF = await _ucafService.GetByCode(request.Code);
+            UniformChartOfAccount UCAF = await _ucafService.GetByCode(request.Code, cancellationToken);
 
             if (UCAF != null)
             {

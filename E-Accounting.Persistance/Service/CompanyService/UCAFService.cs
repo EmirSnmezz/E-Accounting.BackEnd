@@ -6,6 +6,7 @@ using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.CompanyEntities;
 using E_Accounting.Persistance.Contexts;
+using System.Threading;
 
 namespace E_Accounting.Persistance.Service.CompanyService
 {
@@ -37,9 +38,9 @@ namespace E_Accounting.Persistance.Service.CompanyService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<UniformChartOfAccount> GetByCode(string code)
+        public async Task<UniformChartOfAccount> GetByCode(string code, CancellationToken cancellationToken)
         {
-            return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code);
+            return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code, cancellationToken);
         }
     }
 }

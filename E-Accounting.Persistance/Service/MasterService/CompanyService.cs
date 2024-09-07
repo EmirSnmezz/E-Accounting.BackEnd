@@ -3,10 +3,8 @@ using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
-using E_Accounting.Domain.Repositories.GenericRepositories.AppDbContext;
 using E_Accounting.Domain.Repositories.GenericRepositories.CompanyDbContext;
 using E_Accounting.Persistance.Contexts;
-using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Accounting.Persistance.Service.MasterService
@@ -33,9 +31,14 @@ namespace E_Accounting.Persistance.Service.MasterService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<Company?> GetCompanyByName(string companyName)
+        public  IQueryable<Company> GetAll()
         {
-            return await _queryRepository.GetFirstByExpression(x => x.Name == companyName);
+            return _queryRepository.GetAll();
+        }
+
+        public async Task<Company?> GetCompanyByName(string companyName, CancellationToken cancellationToken)
+        {
+            return await _queryRepository.GetFirstByExpression(x => x.Name == companyName, cancellationToken, false);
         }
 
         public async Task MigrateCompanyDatabase()

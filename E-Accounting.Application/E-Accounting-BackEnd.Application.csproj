@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Features\CompanyFeatures\UCAFFeautres\Queries\" />
-    <Folder Include="Features\MasterFeatures\CompanyFeatures\Queries\" />
     <Folder Include="Features\MasterFeatures\MasterUserFeatures\Login\Queries\" />
   </ItemGroup>
 

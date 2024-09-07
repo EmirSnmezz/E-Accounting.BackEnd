@@ -1,4 +1,5 @@
-﻿using E_Accounting.Domain.Entities.App_Entites.Identity;
+﻿using E_Accounting.Domain.Entities.App_Entites;
+using E_Accounting.Domain.Entities.App_Entites.Identity;
 
 namespace E_Accounting.Domain.Roles
 {
@@ -8,20 +9,33 @@ namespace E_Accounting.Domain.Roles
         {
             List<AppRole> roles = new List<AppRole>
             {
-            #region
+            #region RoleTitleNames
            
-                new AppRole(UCAFCreateTitle, UCAFCreateCode, UCAFCreateName),
-                new AppRole(UCAFCreateTitle, UCAFUpdateCode, UCAFUpdateName),
-                new AppRole(UCAFCreateTitle, UCAFDeleteCode, UCAFDeleteName),
-                new AppRole(UCAFCreateTitle, UCAFReadCode, UCAFReadName)
+                new AppRole(UCAFTitle, UCAFCreateCode, UCAFCreateName),
+                new AppRole(UCAFTitle, UCAFUpdateCode, UCAFUpdateName),
+                new AppRole(UCAFTitle, UCAFDeleteCode, UCAFDeleteName),
+                new AppRole(UCAFTitle, UCAFReadCode, UCAFReadName)
 
             #endregion
-                 };
+            };
             return roles;
         }
 
+        public static List<MainRole> GetStaticMainRoles()
+        {
+            List<MainRole> mainRoles = new List<MainRole>
+            {
+                new MainRole(Guid.NewGuid().ToString(), "AdminRole", true),
+                new MainRole(Guid.NewGuid().ToString(), "Yönetici", true),
+                new MainRole(Guid.NewGuid().ToString(), "Kullanıcı", true),
+            };
+
+            return mainRoles;
+        }
+
+
         #region RoleTitleNames
-        public static string UCAFCreateTitle = "Hesap Planı";
+        public static string UCAFTitle = "Hesap Planı";
         #endregion
 
         #region RoleCodeAndNames
