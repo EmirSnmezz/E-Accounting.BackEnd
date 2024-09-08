@@ -33,8 +33,8 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
-    "Method": "GetAll",
-    "RelativePath": "api/Compainies/GetAll",
+    "Method": "GetAllCompanies",
+    "RelativePath": "api/Compainies/GetAllCompanies",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -169,6 +169,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
+    "Method": "GetAllUCAF",
+    "RelativePath": "api/UCAFS/GetAllUCAF",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

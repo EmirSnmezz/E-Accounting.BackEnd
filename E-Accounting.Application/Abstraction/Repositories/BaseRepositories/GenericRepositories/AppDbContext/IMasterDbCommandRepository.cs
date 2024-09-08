@@ -1,10 +1,12 @@
 ﻿
 using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Domain.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Accounting.Domain.Repositories.GenericRepositories.AppDbContext
 {
-    public interface IMasterQueryRepository<T> : IQueryGenericRepository<T>, IRepository<T> where T : BaseEntity
+    public interface IMasterDbCommandRepository<T> : ICommandGenericRepository<T>, IRepository<T>
+        where T : BaseEntity
     {
     }
 }

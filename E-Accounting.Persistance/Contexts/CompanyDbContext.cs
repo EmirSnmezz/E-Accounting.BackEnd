@@ -3,13 +3,6 @@ using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Persistance.AssemblyReferance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance.Contexts
 {
@@ -18,7 +11,7 @@ namespace E_Accounting.Persistance.Contexts
         protected string _connectionString = "";
         public CompanyDbContext(Company company = null)
         {
-            if(company != null)
+            if (company != null)
             {
                 if (company.ServerUserId == "")
                 {
@@ -37,8 +30,8 @@ namespace E_Accounting.Persistance.Contexts
                     _connectionString =
                    $"Data Source={company.ServerName};" +
                    $"Initial Catalog={company.DatabaseName};" +
-                   $"User Id={company.ServerUserId}" +
-                   $"Password={company.ServerPassword}" +
+                   //$"User Id={company.ServerUserId}" +
+                   //$"Password={company.ServerPassword}" +
                    $"Integrated Security=True;" +
                    $"Connect Timeout=30;" +
                    $"Encrypt=True;" +
@@ -69,7 +62,7 @@ namespace E_Accounting.Persistance.Contexts
                     entity.Property(p => p.CreatedDate).CurrentValue = DateTime.Now;
                 }
 
-                if(entity.State == EntityState.Modified)
+                if (entity.State == EntityState.Modified)
                 {
                     entity.Property(p => p.UpdatedDate).CurrentValue = DateTime.Now;
                 }
@@ -80,7 +73,7 @@ namespace E_Accounting.Persistance.Contexts
         public class CompanyDbContextFactory : IDesignTimeDbContextFactory<CompanyDbContext>
         {
             public CompanyDbContext CreateDbContext(string[] args)
-            {   
+            {
                 return new CompanyDbContext();
             }
         }

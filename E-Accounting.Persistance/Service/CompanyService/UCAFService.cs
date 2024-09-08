@@ -2,6 +2,8 @@
 using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
+using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
+using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Queries;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.CompanyEntities;
@@ -38,9 +40,17 @@ namespace E_Accounting.Persistance.Service.CompanyService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
+        public  IQueryable<UniformChartOfAccount> GetAll()
+        {
+            var result = _ıUcafQueryRepository.GetAll().AsQueryable();
+            return result;
+        }
+
         public async Task<UniformChartOfAccount> GetByCode(string code, CancellationToken cancellationToken)
         {
             return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code, cancellationToken);
         }
+
+
     }
 }

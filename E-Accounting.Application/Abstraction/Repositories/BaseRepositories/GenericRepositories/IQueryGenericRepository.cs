@@ -4,7 +4,8 @@ using System.Linq.Expressions;
 
 namespace E_Accounting.Domain.Repositories.GenericRepositories
 {
-    public interface IQueryGenericRepository<T> : IRepository<T> where T : BaseEntity
+    public interface IQueryGenericRepository<T> : IRepository<T> 
+        where T : BaseEntity
     {
 
         IQueryable<T> GetAll(bool isTracking = true);

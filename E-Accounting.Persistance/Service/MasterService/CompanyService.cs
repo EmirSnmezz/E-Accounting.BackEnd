@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.MasterDbContext.CompanyRepositories;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Application.UnitOfWorks;

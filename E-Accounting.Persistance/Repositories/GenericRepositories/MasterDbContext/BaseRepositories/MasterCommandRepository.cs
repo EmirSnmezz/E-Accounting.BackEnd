@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.BaseRepositories
 {
-    public class MasterCommandRepository<T> : IMasterCommandRepository<T> where T : BaseEntity
+    public class MasterCommandRepository<T> : IMasterDbCommandRepository<T>
+        where T : BaseEntity
     {
         private Contexts.MasterDbContext _context;
 

@@ -1,5 +1,6 @@
 ﻿using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.MainRoleRepositories;
+using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.MasterDbContext.CompanyRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.Services.MasterService;

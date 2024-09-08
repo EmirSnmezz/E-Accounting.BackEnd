@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
+using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,14 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> CreateUCAF(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
             CreateUCAFCommandResponse response = await _mediator.Send(request, cancellationToken);
+            return Ok(response);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllUCAF()
+        {
+            GetAllUCAFQuery request = new();
+            GetAllUCAFQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.BaseRepositories
 {
-    public class MasterQueryRepository<T> : IMasterQueryRepository<T> where T : BaseEntity
+    public class MasterQueryRepository<T> : IMasterDbQueryRepository<T> where T : BaseEntity
     {
         private Contexts.MasterDbContext _context;
 
@@ -19,12 +19,12 @@ namespace E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbCont
 
         public IQueryable<T> GetAll(bool isTracking = true)
         {
+            IQueryable<T> entities = Table.AsQueryable();
             if (!isTracking)
             {
-                var entites = Table.AsNoTracking().AsQueryable();
-                return entites;
+                return entities.AsNoTracking();
             }
-            return Table.AsQueryable();
+            return entities;
         }
 
         public async Task<T> GetById(string id, bool isTracking = true)

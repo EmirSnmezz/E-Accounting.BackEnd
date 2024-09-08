@@ -34,7 +34,7 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllCompanies()
         {
             GetAllCompaniesQuery request = new();
             GetAllCompaniesQueryResponse response = await _mediator.Send(request);

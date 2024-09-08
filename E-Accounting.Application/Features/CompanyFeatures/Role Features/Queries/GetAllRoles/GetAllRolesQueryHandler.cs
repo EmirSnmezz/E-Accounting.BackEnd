@@ -28,7 +28,6 @@ namespace E_Accounting.Application.Features.Role_Features.Queries.GetAllRoles
             }
 
             return new(roles);
-
         }
     }
 }

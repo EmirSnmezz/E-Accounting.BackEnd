@@ -23,9 +23,13 @@ public sealed class CreateMainRoleUnitTest
     [Fact]
     public async Task CreateMainRoleCommandResponseShouldNotBeNull()
     {
-        var command = new CreateMainRoleCommand("TestTitle");
+        var command = new CreateMainRoleCommand(
+            Title : "Admin",
+            CompanyId : "7f816504-eb8f-44c2-a3a1-c77afc943971");
         var handler = new CreateMainRoleCommandHandler(_mainRoleSerivce.Object);
-        var response = handler.Handle(command, default);
-        await response.ShouldNotBeNull();
+        var response = await  handler.Handle(command, default);
+         response.ShouldNotBeNull();
+        response.Message.ShouldNotBeEmpty();
+       
     }
 }
