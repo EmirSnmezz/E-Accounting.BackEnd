@@ -21,6 +21,7 @@ public sealed class UpdateCompanyCommandUnitTest
                             .ReturnsAsync(new Domain.Entities.App_Entites.Company());
     }
 
+    [Fact]
     public async Task UpdateCompanyShouldNotBeNull()
     {
         UpdateCompanyCommand request = new(
