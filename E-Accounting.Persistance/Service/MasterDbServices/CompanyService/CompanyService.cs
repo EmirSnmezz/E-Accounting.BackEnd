@@ -57,6 +57,12 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
             }
         }
 
+        public async Task RemoveByIdAsync(string id)
+        {
+           await _commandRepository.RemoveById(id);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
         public async Task UpdateAsync(Company company)
         {
             _commandRepository.Update(company);

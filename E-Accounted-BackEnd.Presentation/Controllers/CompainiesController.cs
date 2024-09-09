@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.DeleteCompany;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.MigrateCompanyDatabase;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.UpdateCompany;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Queries;
@@ -46,6 +47,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> UpdateCompany(UpdateCompanyCommand request, CancellationToken cancellationToken)
         {
             UpdateCompanyCommandResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> RemoveCompany(DeleteCompanyCommand request, CancellationToken cancellationToken)
+        {
+            DeleteCompanyCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

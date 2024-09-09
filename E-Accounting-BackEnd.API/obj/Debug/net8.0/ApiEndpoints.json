@@ -53,6 +53,22 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
+    "Method": "RemoveCompany",
+    "RelativePath": "api/Compainies/RemoveCompany",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.DeleteCompany.DeleteCompanyCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.CompainiesController",
     "Method": "UpdateCompany",
     "RelativePath": "api/Compainies/UpdateCompany",
     "HttpMethod": "POST",
