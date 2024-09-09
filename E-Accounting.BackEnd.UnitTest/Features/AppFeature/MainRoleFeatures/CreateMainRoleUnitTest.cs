@@ -7,12 +7,12 @@ using Shouldly;
 
 namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.MainFeatures;
 public sealed class CreateMainRoleUnitTest
+{
+    private readonly Mock<IMainRoleService> _mainRoleSerivce;
+    public CreateMainRoleUnitTest()
     {
-        private readonly Mock<IMainRoleService> _mainRoleSerivce;
-        public CreateMainRoleUnitTest()
-        {
-            _mainRoleSerivce = new();
-        }
+        _mainRoleSerivce = new();
+    }
     [Fact]
     public async Task MainRoleShouldBeNull()
     {
@@ -24,12 +24,12 @@ public sealed class CreateMainRoleUnitTest
     public async Task CreateMainRoleCommandResponseShouldNotBeNull()
     {
         var command = new CreateMainRoleCommand(
-            Title : "Admin",
-            CompanyId : "7f816504-eb8f-44c2-a3a1-c77afc943971");
+            Title: "Admin",
+            CompanyId: "7f816504-eb8f-44c2-a3a1-c77afc943971");
         var handler = new CreateMainRoleCommandHandler(_mainRoleSerivce.Object);
-        var response = await  handler.Handle(command, default);
-         response.ShouldNotBeNull();
+        var response = await handler.Handle(command, default);
+        response.ShouldNotBeNull();
         response.Message.ShouldNotBeEmpty();
-       
+
     }
 }

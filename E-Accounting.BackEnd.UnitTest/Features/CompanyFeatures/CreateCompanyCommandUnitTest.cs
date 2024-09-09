@@ -4,7 +4,7 @@ using E_Accounting.Domain.Entities.App_Entites;
 using Moq;
 using Shouldly;
 
-namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.CompanyFeatures
+namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures
 {
     public sealed class CreateCompanyCommandUnitTest
     {

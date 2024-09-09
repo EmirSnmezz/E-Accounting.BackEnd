@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.CompanyFeatures.UCAFFeatures
+namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures.UCAFFeatures
 {
     public sealed class CreateUCAFCommandUnitTest
     {
