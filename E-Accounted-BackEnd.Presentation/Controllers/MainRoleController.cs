@@ -1,6 +1,8 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.CreateRole;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.CreateStaticRoles;
+using E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.RemoveMainRole;
+using E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.UpdateMainRole;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Queries.GetAllMainRoleQuery;
 using E_Accounting.Domain.Roles;
 using MediatR;
@@ -38,6 +40,19 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         {
             GetAllMainRolesQuery request = new GetAllMainRolesQuery();
             GetAllMainRolesQueryResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> RemoveMainRole(RemoveMainRoleCommand request, CancellationToken cancellationToken)
+        {
+            RemoveMainRoleCommandResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> UpdateMainRole(UpdateMainRoleCommand request, CancellationToken cancellationToken)
+        {
+            UpdateMainRoleCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

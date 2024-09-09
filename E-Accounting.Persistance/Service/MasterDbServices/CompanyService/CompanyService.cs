@@ -8,7 +8,7 @@ using E_Accounting.Domain.Repositories.GenericRepositories.CompanyDbContext;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace E_Accounting.Persistance.Service.MasterService
+namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
 {
     public sealed class CompanyService : ICompanyService
     {
@@ -32,12 +32,12 @@ namespace E_Accounting.Persistance.Service.MasterService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public  IQueryable<Company> GetAll()
+        public IQueryable<Company> GetAll()
         {
             return _queryRepository.GetAll();
         }
 
-        public async Task<Company?> GetCompanyByName(string companyName, CancellationToken cancellationToken)
+        public async Task<Company> GetCompanyByName(string companyName, CancellationToken cancellationToken)
         {
             return await _queryRepository.GetFirstByExpression(x => x.Name == companyName, cancellationToken, false);
         }

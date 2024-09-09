@@ -14,7 +14,8 @@ using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleRepository;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Persistance.Service.CompanyService;
-using E_Accounting.Persistance.Service.MasterService;
+using E_Accounting.Persistance.Service.MasterDbServices.CompanyService;
+using E_Accounting.Persistance.Service.MasterDbServices.MainRoleService;
 using E_Accounting.Persistance.Service.Role_Service;
 using E_Accounting.Persistance.UnitOfWorkds;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;

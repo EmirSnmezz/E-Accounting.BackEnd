@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Accounting.Application.Features.MasterFeatures.MainRoleFeatures.Commands.CreateRole
 {
-    public sealed record CreateMainRoleCommand
-        (
+    public sealed record CreateMainRoleCommand(
             string Title,
-            bool IsRoleCreatedByAdmin = false,
             string CompanyId = null) : ICommand<CreateMainRoleCommandResponse>;
 }

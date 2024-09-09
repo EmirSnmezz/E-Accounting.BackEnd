@@ -3,7 +3,7 @@ using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
 
-namespace E_Accounting.Persistance.Service.MasterService;
+namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleService;
 
 public sealed class MainRoleService : IMainRoleService
 {
@@ -41,5 +41,22 @@ public sealed class MainRoleService : IMainRoleService
         //}
 
         return await _queryRepository.GetFirstByExpression(x => x.Title == title && x.CompanyId == companyId, cancellationToken, false);
+    }
+
+    public async Task RemoveById(string id, CancellationToken cancellationToken)
+    {
+        await _commandRepository.RemoveById(id);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task UpdateAsync(MainRole mainRole, CancellationToken cancellationToken)
+    {
+        _commandRepository.Update(mainRole);
+        await _unitOfWork.SaveChangesAsync();
+    }
+
+    public async Task <MainRole> GetByIdAsync(string id, CancellationToken cancellationToken)
+    {
+        return await _queryRepository.GetById(id);
     }
 }
