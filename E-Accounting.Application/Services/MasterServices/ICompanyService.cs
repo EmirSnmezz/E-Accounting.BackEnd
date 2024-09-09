@@ -10,5 +10,8 @@ namespace E_Accounting.Application.Services.MasterService
         Task MigrateCompanyDatabase();
         Task<Company?> GetCompanyByName(string companyName, CancellationToken cancellationToken);
         IQueryable<Company> GetAll();
+        Task<Company?> GetById(string id);
+        Task UpdateAsync(Company company);
+        
     }
 }

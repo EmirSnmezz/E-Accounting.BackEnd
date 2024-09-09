@@ -37,6 +37,11 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
             return _queryRepository.GetAll();
         }
 
+        public async Task<Company> GetById(string id)
+        {
+            return await _queryRepository.GetById(id);
+        }
+
         public async Task<Company> GetCompanyByName(string companyName, CancellationToken cancellationToken)
         {
             return await _queryRepository.GetFirstByExpression(x => x.Name == companyName, cancellationToken, false);
@@ -50,6 +55,12 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
                 var db = new CompanyDbContext(company);
                 db.Database.Migrate();
             }
+        }
+
+        public async Task UpdateAsync(Company company)
+        {
+            _commandRepository.Update(company);
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }
