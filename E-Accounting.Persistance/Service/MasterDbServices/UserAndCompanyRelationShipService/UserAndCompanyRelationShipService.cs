@@ -43,5 +43,11 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelati
              await _commadRepository.RemoveById(id);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task UpdateAsync(UserAndCompanyRelationShip userAndCompanyRelationShip, CancellationToken cancellationToken1)
+        {
+            _commadRepository.Update(userAndCompanyRelationShip);
+            await _unitOfWork.SaveChangesAsync();
+        }
     }
 }
