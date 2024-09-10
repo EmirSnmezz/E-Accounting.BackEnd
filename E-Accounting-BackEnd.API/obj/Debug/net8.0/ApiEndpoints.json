@@ -161,7 +161,33 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.CreateMainRoleAndRoleRelationShipCommand",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Create.CreateMainRoleAndRoleRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleAndRoleRelationShipsController",
+    "Method": "GetAll",
+    "RelativePath": "api/MainRoleAndRoleRelationShips/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleAndRoleRelationShipsController",
+    "Method": "Update",
+    "RelativePath": "api/MainRoleAndRoleRelationShips/Update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Update.UpdateMainRoleAndRoleRelationShipCommand",
         "IsRequired": true
       }
     ],
