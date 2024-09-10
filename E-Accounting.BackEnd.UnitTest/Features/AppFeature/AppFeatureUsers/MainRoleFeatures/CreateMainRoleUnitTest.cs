@@ -5,7 +5,7 @@ using E_Accounting.Domain.Entities.App_Entites;
 using Moq;
 using Shouldly;
 
-namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.MainFeatures;
+namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.MainRoleFeatures;
 public sealed class CreateMainRoleUnitTest
 {
     private readonly Mock<IMainRoleService> _mainRoleSerivce;

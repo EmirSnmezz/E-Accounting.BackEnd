@@ -3,7 +3,7 @@ using E_Accounting.Application.Services.MasterService;
 using Moq;
 using Shouldly;
 
-namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.MainRoleFeatures
+namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.MainRoleFeatures
 {
     public class UpdateMainRoleServiceUnitTest
     {

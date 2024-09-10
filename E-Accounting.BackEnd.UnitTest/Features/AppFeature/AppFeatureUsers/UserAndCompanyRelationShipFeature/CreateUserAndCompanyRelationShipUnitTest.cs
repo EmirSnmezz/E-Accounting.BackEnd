@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers
+namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.UserAndCompanyRelationShipFeature
 {
     public sealed class CreateUserAndCompanyRelationShipUnitTest
     {
@@ -23,9 +23,9 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers
         [Fact]
         public async Task ShouldNotBeNull()
         {
-           _service.Setup(x=> x
-                               .GetByIdAsync(It.IsAny<string>(), default))
-                               .ReturnsAsync(new UserAndCompanyRelationShip()).ShouldNotBeNull();
+            _service.Setup(x => x
+                                .GetByIdAsync(It.IsAny<string>(), default))
+                                .ReturnsAsync(new UserAndCompanyRelationShip()).ShouldNotBeNull();
         }
 
         [Fact]
