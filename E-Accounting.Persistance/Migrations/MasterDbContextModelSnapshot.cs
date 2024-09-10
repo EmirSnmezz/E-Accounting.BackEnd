@@ -154,33 +154,6 @@ namespace E_Accounting.Persistance.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.Identity.UserAndCompanyRelationship", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Company")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CompanyId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("UserAndCompanyRelationships");
-                });
-
             modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.MainRole", b =>
                 {
                     b.Property<string>("Id")
@@ -234,13 +207,61 @@ namespace E_Accounting.Persistance.Migrations
                     b.ToTable("MainRoleAndRoleRelationships");
                 });
 
-            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.Identity.UserAndCompanyRelationship", b =>
+            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.MainRoleAndUserRelationShip", b =>
                 {
-                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Navigation("AppUser");
+                    b.Property<string>("CompanyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MainRoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("MainRoleId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MainRoleAndUserRelationShips");
+                });
+
+            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.UserAndCompanyRelationShip", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CompanyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MasterUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("MasterUserId");
+
+                    b.ToTable("UserAndCompanyRelationships");
                 });
 
             modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.MainRole", b =>
@@ -265,6 +286,42 @@ namespace E_Accounting.Persistance.Migrations
                     b.Navigation("AppRole");
 
                     b.Navigation("MainRole");
+                });
+
+            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.MainRoleAndUserRelationShip", b =>
+                {
+                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.MainRole", "MainRole")
+                        .WithMany()
+                        .HasForeignKey("MainRoleId");
+
+                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("MainRole");
+                });
+
+            modelBuilder.Entity("E_Accounting.Domain.Entities.App_Entites.UserAndCompanyRelationShip", b =>
+                {
+                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.HasOne("E_Accounting.Domain.Entities.App_Entites.AppUser", "MasterUser")
+                        .WithMany()
+                        .HasForeignKey("MasterUserId");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("MasterUser");
                 });
 #pragma warning restore 612, 618
         }
