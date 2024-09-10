@@ -27,5 +27,22 @@ namespace E_Accounting.BackEnd.UnitTest.Features.AppFeature.AppFeatureUsers.Main
                 .ReturnsAsync(new Domain.Entities.App_Entites.MainRoleAndRoleRelationship())
                 .ShouldNotBeNull();
         }
+
+        [Fact]
+        public async Task UpdateMainRoleAndRoleRelationShipCommandShouldNotBeNull()
+        {
+            UpdateMainRoleAndRoleRelationShipCommand request = new(Id: "TestId", RoleId: "TestId", MainRoleId: "TestId");
+            UpdateMainRoleAndRoleRelationShipCommandHandler handler = new(_service.Object);
+
+            _service.Setup(x => x
+          .GetByIdAsnyc(It.IsAny<string>(), default))
+          .ReturnsAsync(new Domain.Entities.App_Entites.MainRoleAndRoleRelationship())
+          .ShouldNotBeNull();
+
+            UpdateMainRoleAndRoleRelationShipCommandResponse response = await handler.Handle(request, default);
+
+            response.ShouldNotBeNull();
+            response.Message.ShouldNotBeNull();
+        }
     }
 }
