@@ -152,6 +152,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleAndRoleRelationShipsController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/MainRoleAndRoleRelationShips/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.CreateMainRoleAndRoleRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
     "Method": "CreateAllRoles",
     "RelativePath": "api/Roles/CreateAllRoles",

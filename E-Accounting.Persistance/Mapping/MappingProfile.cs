@@ -2,10 +2,12 @@
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.Role_Features.CreateAllRoles;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
+using E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands;
 using E_Accounting.Application.Features.Role_Features;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
 using E_Accounting.Domain.Entities.CompanyEntities;
+using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleAndRoleRelationShipRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,7 @@ namespace E_Accounting.Persistance.Mapping
             CreateMap<CreateCompanyCommand, Company>();
             CreateMap<CreateUCAFCommand, UniformChartOfAccount>();
             CreateMap<CreateRoleCommand, AppRole>();
+            CreateMap<CreateMainRoleAndRoleRelationShipCommand, MainRoleAndRoleRelationship>();
         }
     }
 }
