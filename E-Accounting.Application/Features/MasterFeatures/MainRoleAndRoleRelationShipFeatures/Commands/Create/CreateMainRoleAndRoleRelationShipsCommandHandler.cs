@@ -2,8 +2,8 @@
 using E_Accounting.Application.Services.MainRoleAndRoleRelationShipService;
 using E_Accounting.Domain.Entities.App_Entites;
 
-namespace E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Create
-{
+namespace E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Create;
+
     public sealed record CreateMainRoleAndRoleRelationShipCommandHandler : ICommandHandler<CreateMainRoleAndRoleRelationShipCommand, CreateMainRoleAndRoleRelationShipsCommandResponse>
     {
         private readonly IMainRoleAndRoleRelationShipService _service;
@@ -31,4 +31,4 @@ namespace E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelati
             return new();
         }
     }
-}
+

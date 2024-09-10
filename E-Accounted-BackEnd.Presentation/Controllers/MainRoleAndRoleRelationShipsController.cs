@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Create;
+using E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Remove;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Commands.Update;
 using E_Accounting.Application.Features.MasterFeatures.MainRoleAndRoleRelationShipFeatures.Queries;
 using MediatR;
@@ -37,6 +38,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> Update(UpdateMainRoleAndRoleRelationShipCommand request, CancellationToken cancellationToken)
         {
             UpdateMainRoleAndRoleRelationShipCommandResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Remove(RemoveMainRoleAndRoleRelationShipCommand request, CancellationToken cancellationToken)
+        {
+            RemoveMainRoleAndRoleRelationShipCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }
