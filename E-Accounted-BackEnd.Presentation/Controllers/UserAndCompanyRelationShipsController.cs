@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Create;
+using E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Remove;
 using E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Update;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> Update(UpdateUserAndCompanyRelationShipCommand request, CancellationToken cancellationToken)
         {
             UpdateUserAndCompanyRelationShipCommandResponse response = await _mediator.Send(request, cancellationToken);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Remove(RemoveUserAndCompanyRelationShipCommand request, CancellationToken cancellationToken)
+        {
+            RemoveUserAndCompanyRelationShipCommandResponse response = await _mediator.Send(request,cancellationToken);
             return Ok(response);
         }
     }
