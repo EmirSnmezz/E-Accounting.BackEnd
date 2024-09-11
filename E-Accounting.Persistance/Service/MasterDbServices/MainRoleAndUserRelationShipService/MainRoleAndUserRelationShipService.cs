@@ -30,6 +30,12 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndUserRelat
             await _unitOfWork.SaveChangesAsync();
         }
 
+        public async Task<MainRoleAndUserRelationShip> GetById(string id)
+        {
+           var entity = await _queryRepository.GetById(id);
+            return entity;
+        }
+
         public async Task<MainRoleAndUserRelationShip> GetByUserIdCompanyIdAndMainRoleId(string userId, string companyId, string mainRoleId , CancellationToken cancellationToken)
         {
             var mainRoleAndUserRelationShip =  await _queryRepository.GetFirstByExpression(x => x.UserId == userId && x.CompanyId == companyId && x.MainRoleId == mainRoleId, cancellationToken);

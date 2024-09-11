@@ -219,7 +219,23 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.CreateMainRoleAndUserRelationShipCommand",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.Create.CreateMainRoleAndUserRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleAndUserRelationShipsController",
+    "Method": "Remove",
+    "RelativePath": "api/MainRoleAndUserRelationShips/Remove",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.Remove.RemoveMainRoleAndUserRelationShipCommand",
         "IsRequired": true
       }
     ],
