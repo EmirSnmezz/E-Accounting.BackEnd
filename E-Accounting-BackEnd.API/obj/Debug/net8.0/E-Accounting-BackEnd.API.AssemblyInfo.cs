@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E-Accounting-BackEnd.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76f07903be0f40370662ca851c4c58f33b678c1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07ea7154b2fdcc632544139e3872d4dcbcbbd537")]
 [assembly: System.Reflection.AssemblyProductAttribute("E-Accounting-BackEnd.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-Accounting-BackEnd.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

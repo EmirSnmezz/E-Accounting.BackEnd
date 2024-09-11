@@ -18,6 +18,7 @@ using E_Accounting.Persistance.Contexts;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.CompanyRepositories;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleAndRoleRelationShipRepositories;
+using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleAndUserRelationShipRepositories;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleRepository;
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.UserAndCompanyRelationShipRepository;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
@@ -77,6 +78,8 @@ namespace E_Accounting_BackEnd.API.Configurations
             services.AddScoped<IMainRoleAndRoleRelationShipQueryRepository, MainRoleAndRoleRelationShipQueryRepository>();
             services.AddScoped<IUserAndCompanyRelationShipCommandRepository, UserAndCompanyRelationShipCommandRepository>();
             services.AddScoped<IUserAndCompanyRelationShipQueryRepository, UserAndCompanyRelationShipQueryRepository>();
+            services.AddScoped<IMainRoleAndUserRelationShipCommandRepository, MainRoleAndUserRelationShipCommandRepository>();
+            services.AddScoped<IMainRoleAndUserRelationShipQueryRepository, MainRoleAndUserrelationShipQueryRepoistory>();
             #endregion
 
             #endregion

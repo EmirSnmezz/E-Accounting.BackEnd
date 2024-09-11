@@ -1,11 +1,6 @@
 ﻿using E_Accounting.Application.Messaging;
 using E_Accounting.Application.Services.UserAndCompanyRelationShipService;
 using E_Accounting.Domain.Entities.App_Entites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Remove;
 public sealed record RemoveUserAndCompanyRelationShipCommandHandler : ICommandHandler<RemoveUserAndCompanyRelationShipCommand, RemoveUserAndCompanyRelationShipCommandResponse>

@@ -210,6 +210,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.MainRoleAndUserRelationShipsController",
+    "Method": "Create",
+    "RelativePath": "api/MainRoleAndUserRelationShips/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.CreateMainRoleAndUserRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.RolesController",
     "Method": "CreateAllRoles",
     "RelativePath": "api/Roles/CreateAllRoles",
@@ -314,6 +330,38 @@
       {
         "Name": "request",
         "Type": "E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Create.CreateUserAndCompanyRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UserAndCompanyRelationShipsController",
+    "Method": "Remove",
+    "RelativePath": "api/UserAndCompanyRelationShips/Remove",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Remove.RemoveUserAndCompanyRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UserAndCompanyRelationShipsController",
+    "Method": "Update",
+    "RelativePath": "api/UserAndCompanyRelationShips/Update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.UserAndCompanyRelationShipFeatures.Commands.Update.UpdateUserAndCompanyRelationShipCommand",
         "IsRequired": true
       }
     ],

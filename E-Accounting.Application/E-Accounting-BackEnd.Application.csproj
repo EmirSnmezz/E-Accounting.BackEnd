@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\MasterFeatures\MainRoleAndUserRelationShipFeatures\Command\" />
     <Folder Include="Features\MasterFeatures\MainRoleAndUserRelationShipFeatures\Queries\" />
     <Folder Include="Features\MasterFeatures\MasterUserFeatures\Login\Queries\" />
     <Folder Include="Features\MasterFeatures\UserAndCompanyRelationShipFeatures\Queries\" />
