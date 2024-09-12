@@ -8,5 +8,6 @@ namespace E_Accounting.Application.Services.MainRoleAndUserRelationShipService
         Task  RemoveById(string id);
         Task <MainRoleAndUserRelationShip> GetByUserIdCompanyIdAndMainRoleId(string userId, string companyId, string mainRoleId, CancellationToken cancellation = default);
         Task <MainRoleAndUserRelationShip> GetById(string id);
+        Task<MainRoleAndUserRelationShip> GetRolesByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellation = default);
     }
 }

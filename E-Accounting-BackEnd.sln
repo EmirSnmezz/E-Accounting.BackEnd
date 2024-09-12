@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Accounting-BackEnd.API", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Accounting-BackEnd.Presentation", "E-Accounted-BackEnd.Presentation\E-Accounting-BackEnd.Presentation.csproj", "{6C31F3EF-B274-4A00-A02E-175597EFC173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Accounting.BackEnd.UnitTest", "E-Accounting.BackEnd.UnitTest\E-Accounting.BackEnd.UnitTest.csproj", "{553D04DB-A579-407B-A13F-80E6DDB68898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Accounting.BackEnd.UnitTest", "E-Accounting.BackEnd.UnitTest\E-Accounting.BackEnd.UnitTest.csproj", "{553D04DB-A579-407B-A13F-80E6DDB68898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

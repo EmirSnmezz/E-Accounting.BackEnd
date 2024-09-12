@@ -8,8 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\MasterFeatures\AuthenticationFeatures\Commands\Login\Queries\**" />
+    <EmbeddedResource Remove="Features\MasterFeatures\AuthenticationFeatures\Commands\Login\Queries\**" />
+    <None Remove="Features\MasterFeatures\AuthenticationFeatures\Commands\Login\Queries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Features\MasterFeatures\MainRoleAndUserRelationShipFeatures\Queries\" />
-    <Folder Include="Features\MasterFeatures\MasterUserFeatures\Login\Queries\" />
     <Folder Include="Features\MasterFeatures\UserAndCompanyRelationShipFeatures\Queries\" />
   </ItemGroup>
 

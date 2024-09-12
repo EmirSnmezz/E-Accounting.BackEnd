@@ -67,11 +67,11 @@ namespace E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbCont
         {
             if (!isTracking)
             {
-                var noTrackingEntity = Table.Where(predicate).ToList().AsQueryable();
+                var noTrackingEntity = Table.Where(predicate).AsQueryable();
                 return noTrackingEntity;
             }
 
-            var entity = Table.Where(predicate).ToList().AsQueryable();
+            var entity = Table.Where(predicate).AsQueryable();
             return entity;
         }
     }

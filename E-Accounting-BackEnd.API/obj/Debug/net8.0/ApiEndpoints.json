@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.AuthController",
+    "Method": "GetRolesByUserIdAndCompanyId",
+    "RelativePath": "api/Auth/GetRolesByUserIdAndCompanyId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.AuthenticationFeatures.Queries.GetUserRolesByUserIdAndCompanyId.GetUserRolesByUserIdAndCompanyIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -9,7 +25,7 @@
     "Parameters": [
       {
         "Name": "loginRequest",
-        "Type": "E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands.LoginCommand",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.AuthenticationFeatures.Commands.Login.LoginCommand",
         "IsRequired": true
       }
     ],

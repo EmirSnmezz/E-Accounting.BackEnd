@@ -14,5 +14,6 @@ namespace E_Accounting.Application.Services.UserAndCompanyRelationShipService
         Task RemoveByIdAsync(string id, CancellationToken cancellationToken);
         Task<UserAndCompanyRelationShip> GetByIdAsync(string id, CancellationToken cancellationToken);
         Task<UserAndCompanyRelationShip> GetByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellationToken);
+        Task<IList<UserAndCompanyRelationShip>> GetCompanyListByUserId(string userId, CancellationToken cancellationToken);
     }
 }

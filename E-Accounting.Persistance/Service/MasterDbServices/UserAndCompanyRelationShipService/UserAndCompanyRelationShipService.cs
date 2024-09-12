@@ -2,11 +2,7 @@
 using E_Accounting.Application.Services.UserAndCompanyRelationShipService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelationShipService
 {
@@ -35,12 +31,19 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelati
 
         public async Task<UserAndCompanyRelationShip> GetByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellationToken)
         {
-            return await _queryRepository.GetFirstByExpression(x => x.MasterUserId == userId && x.CompanyId == companyId, cancellationToken);
+            var result = await _queryRepository.GetFirstByExpression(x => x.MasterUserId == userId && x.CompanyId == companyId, cancellationToken);
+            return result;
+        }
+
+        public async Task<IList<UserAndCompanyRelationShip>> GetCompanyListByUserId(string userId, CancellationToken cancellationToken)
+        {
+            var result = await _queryRepository.GetWhere(x => x.MasterUserId == userId).Include("Company").ToListAsync(cancellationToken);
+            return result;
         }
 
         public async Task RemoveByIdAsync(string id, CancellationToken cancellationToken)
         {
-             await _commadRepository.RemoveById(id);
+            await _commadRepository.RemoveById(id);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 

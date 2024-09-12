@@ -42,6 +42,12 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndUserRelat
             return mainRoleAndUserRelationShip;
         }
 
+        public async Task<MainRoleAndUserRelationShip> GetRolesByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellation = default)
+        {
+            var result = await _queryRepository.GetFirstByExpression(x => x.UserId == userId && x.CompanyId == companyId, cancellation);
+            return result;
+        }
+
         public async Task RemoveById(string id)
         {
             await _commandRepository.RemoveById(id);

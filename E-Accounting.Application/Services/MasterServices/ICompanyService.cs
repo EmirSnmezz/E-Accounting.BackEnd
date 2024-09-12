@@ -12,6 +12,6 @@ namespace E_Accounting.Application.Services.MasterService
         IQueryable<Company> GetAll();
         Task<Company?> GetById(string id);
         Task UpdateAsync(Company company);
-        Task RemoveByIdAsync(string id);    
+        Task RemoveByIdAsync(string id);
     }
 }

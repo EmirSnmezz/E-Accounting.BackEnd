@@ -1,4 +1,5 @@
 ﻿using E_Accounting.Application.Abstraction.JWT;
+using E_Accounting.Domain.DTOs;
 using E_Accounting.Domain.Entities.App_Entites;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -20,14 +21,14 @@ namespace E_Accounting_BackEnd.Infrastructer.Authentication
             _jwtOptions = jwtOptions.Value;
             _userManager = userManager;
         }
-        public async Task<string> CreateTokenAsync(AppUser user, List<string> roles)
+        public async Task<RefreshTokenDto> CreateTokenAsync(AppUser user)
         {
             var claims = new Claim[]
                 {
                 new Claim(JwtRegisteredClaimNames.Sub,user.UserFirstAndLastName),
                 new Claim(JwtRegisteredClaimNames.Email,user.Email),
                 new Claim(ClaimTypes.Authentication, user.Id),
-                new Claim(ClaimTypes.Role, string.Join(",", roles))
+                //new Claim(ClaimTypes.Role, string.Join(",", roles))
                 };
 
             DateTime expires = DateTime.Now.AddDays(1);
@@ -48,7 +49,7 @@ namespace E_Accounting_BackEnd.Infrastructer.Authentication
             user.RefreshToken =  refreshToken;
             user.RefreshTokenExpires = expires.AddDays(1);
             await _userManager.UpdateAsync(user);
-            return token;
+            return new(token, refreshToken, user.RefreshTokenExpires);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace E_Accounting.Application.Services.MainRoleAndRoleRelationShipService
         Task RemoveById (string id, CancellationToken cancellationToken);
         IQueryable<MainRoleAndRoleRelationship> GetAll();
         Task<MainRoleAndRoleRelationship> GetByIdAsnyc(string id, CancellationToken cancellationToken);
+        Task<List<MainRoleAndRoleRelationship>> GetListByIdForGetRolesAsync(string id, CancellationToken cancellationToken);
         Task<MainRoleAndRoleRelationship> GetByRoleIdAndMainRoleId(string roleId, string mainRoleId, CancellationToken cancellationToken);
     }
 }

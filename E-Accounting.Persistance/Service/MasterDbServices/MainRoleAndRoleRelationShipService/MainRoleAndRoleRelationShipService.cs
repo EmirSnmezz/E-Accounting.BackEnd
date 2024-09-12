@@ -2,6 +2,7 @@
 using E_Accounting.Application.Services.MainRoleAndRoleRelationShipService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,12 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndRelationS
         public async Task<MainRoleAndRoleRelationship> GetByIdAsnyc(string id, CancellationToken cancellationToken)
         {
             return await _queryRepository.GetById(id);
+        }
+
+        public async Task<List<MainRoleAndRoleRelationship>> GetListByIdForGetRolesAsync(string id, CancellationToken cancellationToken)
+        {
+            var result =  await _queryRepository.GetWhere(x => x.MainRoleId == id).Include("AppRole").ToListAsync();
+            return result;
         }
 
         public async Task<MainRoleAndRoleRelationship> GetByRoleIdAndMainRoleId(string roleId, string mainRoleId, CancellationToken cancellationToken)

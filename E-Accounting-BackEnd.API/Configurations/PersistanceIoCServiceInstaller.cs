@@ -5,6 +5,7 @@ using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.MasterDbContext.MainRoleAndUserRelationShipRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.MasterDbContext.UserAndCompanyRelationShipRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
+using E_Accounting.Application.Services.AuthenticationServices;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.Services.MainRoleAndRoleRelationShipService;
 using E_Accounting.Application.Services.MainRoleAndUserRelationShipService;
@@ -23,6 +24,7 @@ using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.
 using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.UserAndCompanyRelationShipRepository;
 using E_Accounting.Persistance.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Persistance.Service.CompanyService;
+using E_Accounting.Persistance.Service.MasterDbServices.AuthenticationService;
 using E_Accounting.Persistance.Service.MasterDbServices.CompanyService;
 using E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndRelationShipService;
 using E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndUserRelationShipService;
@@ -52,6 +54,7 @@ namespace E_Accounting_BackEnd.API.Configurations
             services.AddScoped<IMainRoleAndRoleRelationShipService, MainRoleAndRoleRelationShipService>();
             services.AddScoped<IMainRoleAndUserRelationShipService, MainRoleAndUserRelationShipService>();
             services.AddScoped<IUserAndCompanyRelationShipService, UserAndCompanyRelationShipService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
             #endregion
 
 

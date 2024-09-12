@@ -1,5 +1,6 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
-using E_Accounting.Application.Features.MasterFeatures.MasterUserFeatures.Login.Commands;
+using E_Accounting.Application.Features.MasterFeatures.AuthenticationFeatures.Commands.Login;
+using E_Accounting.Application.Features.MasterFeatures.AuthenticationFeatures.Queries.GetUserRolesByUserIdAndCompanyId;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> Login(LoginCommand loginRequest)
         {
             LoginCommandResponse response = await _mediator.Send(loginRequest);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetRolesByUserIdAndCompanyId(GetUserRolesByUserIdAndCompanyIdQuery request, CancellationToken cancellationToken)
+        {
+            GetUserRolesByUserIdAndCompanyIdQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

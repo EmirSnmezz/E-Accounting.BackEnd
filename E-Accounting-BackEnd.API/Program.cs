@@ -37,13 +37,29 @@ using (var scoped = app.Services.CreateScope())
     
     if(!userManager.Users.Any())
     {
-        userManager.CreateAsync(new AppUser
+
+        AppUser user = new ()
         {
+            Id = Guid.NewGuid().ToString(),
             UserName = "admin",
             UserFirstAndLastName = "emrsnmezz",
             Email = "emircan_snmez@outlook.com",
-            Id = Guid.NewGuid().ToString(),
-        }, "Password12").Wait();
+        };
+
+         var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
+        
+        if (!result.Succeeded)
+        {
+            // Baþarýsýz olursa hata mesajlarýný al
+            foreach (var error in result.Errors)
+            {
+                Console.WriteLine($"Error: {error.Description}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("User created successfully.");
+        }
     }
         
 }

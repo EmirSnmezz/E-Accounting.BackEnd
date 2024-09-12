@@ -3,11 +3,6 @@ using E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationSh
 using E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.Remove;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounted_BackEnd.Presentation.Controllers
 {
