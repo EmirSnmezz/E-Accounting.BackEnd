@@ -31,6 +31,8 @@ app.UseAuthentication(); // JWT kullanabilmemiz için Authentication yapýsnýn kur
 
 app.MapControllers();
 
+app.UseCors();
+
 using (var scoped = app.Services.CreateScope())
 {
     var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
@@ -47,19 +49,6 @@ using (var scoped = app.Services.CreateScope())
         };
 
          var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
-        
-        if (!result.Succeeded)
-        {
-            // Baþarýsýz olursa hata mesajlarýný al
-            foreach (var error in result.Errors)
-            {
-                Console.WriteLine($"Error: {error.Description}");
-            }
-        }
-        else
-        {
-            Console.WriteLine("User created successfully.");
-        }
     }
         
 }

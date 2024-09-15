@@ -12,6 +12,11 @@ namespace E_Accounting_BackEnd.API.Configurations
         {
             services.AddScoped<ExceptionMiddleware>();
 
+            services.AddCors(options => options.AddDefaultPolicy(options =>
+            {
+                options.AllowAnyHeader().AllowAnyMethod().AllowCredentials().SetIsOriginAllowed(options => true);
+            }));
+
             services.AddControllers().AddApplicationPart(typeof(AssemblyManager).Assembly);
 
             services.AddSwaggerGen(setup => // Swager yapılanmasını özelleştirmek için bir lambda ifadesi kullandık
