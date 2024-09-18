@@ -48,7 +48,8 @@ namespace E_Accounting.Application.Features.MasterFeatures.AuthenticationFeature
                 UserId: user.Id,
                 UserNameAndLastName: user.UserFirstAndLastName,
                 Companies: companiesDto,
-                Company: companiesDto[0]
+                Company: companiesDto[0],
+                Year: DateTime.Now.Year
                 );
             return response;
         }

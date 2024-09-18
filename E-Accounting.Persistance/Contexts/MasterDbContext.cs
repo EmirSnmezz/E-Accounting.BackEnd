@@ -1,6 +1,7 @@
 ﻿using E_Accounting.Domain.Common;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
+using E_Accounting.Persistance.AssemblyReferance;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

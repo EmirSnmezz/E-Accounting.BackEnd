@@ -1,13 +1,9 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
+using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.CreateMainUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounted_BackEnd.Presentation.Controllers
 {
@@ -21,6 +17,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> CreateUCAF(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
             CreateUCAFCommandResponse response = await _mediator.Send(request, cancellationToken);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> CreateMainUCAF(CreateMainUCAFCommand request, CancellationToken cancellationToken)
+        {
+            CreateMainUCAFCommandResponse response = await _mediator.Send(request, cancellationToken);
             return Ok(response);
         }
 

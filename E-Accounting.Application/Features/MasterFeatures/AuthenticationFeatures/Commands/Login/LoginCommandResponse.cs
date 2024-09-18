@@ -13,6 +13,7 @@ namespace E_Accounting.Application.Features.MasterFeatures.AuthenticationFeature
         string Email,
         string UserId,
         string UserNameAndLastName,
+        int Year,
         IList<CompanyDto> Companies,
         CompanyDto Company
         );

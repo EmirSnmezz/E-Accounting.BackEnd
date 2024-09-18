@@ -14,6 +14,7 @@ namespace E_Accounting.Application.Services.CompanyService
     {
         Task CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken);
         Task<UniformChartOfAccount> GetByCode(string code, CancellationToken cancellationToken);
+        Task CreateMainUCAFsToCompany(string companyId, CancellationToken cancellationToken);
         IQueryable<UniformChartOfAccount> GetAll();
     }
 }
