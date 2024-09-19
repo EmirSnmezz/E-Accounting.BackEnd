@@ -14,7 +14,7 @@ namespace E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Comma
         string Name,
         string ServerName,
         string DatabaseName,
-        string UserId,
-        string Password
+        string ServerUserId,
+        string ServerPassword
         ) : ICommand<CreateCompanyCommandResponse>;
 }

@@ -7,7 +7,6 @@ using E_Accounting.Application.Features.Role_Features;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Entities.App_Entites.Identity;
 using E_Accounting.Domain.Entities.CompanyEntities;
-using E_Accounting.Persistance.Repositories.GenericRepositories.MasterDbContext.MainRoleAndRoleRelationShipRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

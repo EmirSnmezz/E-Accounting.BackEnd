@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L0ws+IYez/I=",
+  "dgSpecHash": "SwfYws8hCWw=",
   "success": true,
   "projectFilePath": "C:\\Users\\emirc\\source\\repos\\E-Accounting.BackEnd\\E-Accounted-BackEnd.Presentation\\E-Accounting-BackEnd.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emirc\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
-    "C:\\Users\\emirc\\.nuget\\packages\\mediatr\\12.4.0\\mediatr.12.4.0.nupkg.sha512",
+    "C:\\Users\\emirc\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emirc\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

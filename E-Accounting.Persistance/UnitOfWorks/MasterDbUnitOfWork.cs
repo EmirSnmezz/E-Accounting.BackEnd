@@ -1,7 +1,7 @@
 ﻿using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
-namespace E_Accounting.Persistance.UnitOfWorkds
+namespace E_Accounting.Persistance.UnitOfWorks
 {
     public sealed class MasterDbUnitOfWork : IMasterUnitOfWork
     {

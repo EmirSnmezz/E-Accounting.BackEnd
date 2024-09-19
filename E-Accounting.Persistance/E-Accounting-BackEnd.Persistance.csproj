@@ -28,4 +28,8 @@
     <ProjectReference Include="..\E-Accounting.Domain\E-Accounting-BackEnd.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+  </ItemGroup>
+
 </Project>

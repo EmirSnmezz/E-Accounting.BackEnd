@@ -16,7 +16,7 @@
           "E-Accounting-BackEnd.Presentation": "1.0.0",
           "FluentValidation": "11.9.2",
           "FluentValidation.DependencyInjectionExtensions": "11.9.2",
-          "MediatR": "12.4.0",
+          "MediatR": "12.4.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
@@ -113,7 +113,7 @@
           }
         }
       },
-      "MediatR/12.4.0": {
+      "MediatR/12.4.1": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
@@ -121,7 +121,7 @@
         "runtime": {
           "lib/net6.0/MediatR.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.4.0.0"
+            "fileVersion": "12.4.1.0"
           }
         }
       },
@@ -135,7 +135,7 @@
       },
       "MediatR.Extensions.Microsoft.DependencyInjection/11.1.0": {
         "dependencies": {
-          "MediatR": "12.4.0",
+          "MediatR": "12.4.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
         "runtime": {
@@ -1532,7 +1532,7 @@
         "dependencies": {
           "E-Accounting-BackEnd.Domain": "1.0.0",
           "FluentValidation": "11.9.2",
-          "MediatR": "12.4.0"
+          "MediatR": "12.4.1"
         },
         "runtime": {
           "E-Accounting-BackEnd.Application.dll": {
@@ -1584,7 +1584,7 @@
       "E-Accounting-BackEnd.Presentation/1.0.0": {
         "dependencies": {
           "E-Accounting-BackEnd.Application": "1.0.0",
-          "MediatR": "12.4.0",
+          "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         },
         "runtime": {
@@ -1651,12 +1651,12 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
-    "MediatR/12.4.0": {
+    "MediatR/12.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-s8xhhvsTQqt7jI1XeVqcniiph/QoRmJb1qxVgk7UFpAgOzpzZ0VTl8zV+lFJgxISVqZuJRjmxF+P3AuHyelCrg==",
-      "path": "mediatr/12.4.0",
-      "hashPath": "mediatr.12.4.0.nupkg.sha512"
+      "sha512": "sha512-0tLxCgEC5+r1OCuumR3sWyiVa+BMv3AgiU4+pz8xqTc+2q1WbUEXFOr7Orm96oZ9r9FsldgUtWvB2o7b9jDOaw==",
+      "path": "mediatr/12.4.1",
+      "hashPath": "mediatr.12.4.1.nupkg.sha512"
     },
     "MediatR.Contracts/2.0.1": {
       "type": "package",

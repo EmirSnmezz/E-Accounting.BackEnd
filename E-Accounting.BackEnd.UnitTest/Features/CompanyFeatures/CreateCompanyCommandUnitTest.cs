@@ -28,8 +28,8 @@ namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures
             var command = new CreateCompanyCommand(Name: "DkMotorss",
                                                    ServerName: "TestServer",
                                                    DatabaseName: "TestName",
-                                                   UserId: "TestUsers",
-                                                   Password: "TestPassword");
+                                                   ServerUserId: "TestUsers",
+                                                   ServerPassword: "TestPassword");
 
             var handler = new CreateCompanyCommandHandler(_companyService.Object);
 

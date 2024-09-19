@@ -1,13 +1,6 @@
 ﻿using E_Accounting.Application.Messaging;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Domain.Entities.CompanyEntities;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF
 {

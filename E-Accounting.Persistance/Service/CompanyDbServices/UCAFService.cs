@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using E_Accounting.Application;
+using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.CompanyEntities;
+using E_Accounting.Persistance.Context;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +32,8 @@ namespace E_Accounting.Persistance.Service.CompanyService
         public async Task CreateMainUCAFsToCompany(string companyId, CancellationToken cancellationToken)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _commandRepository.SetDbContextInstance(_companyDbContext);
+            _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
             _unitOfWork.SetDbContextInstance(_companyDbContext);
 
             var oldList = await _ıUcafQueryRepository.GetWhere(p => p.Type == "A").ToListAsync();
@@ -2197,15 +2201,21 @@ namespace E_Accounting.Persistance.Service.CompanyService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)
+        public async Task<UniformChartOfAccount> CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)
         {// sanırım hatalı
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(request.CompanyId);
+            _commandRepository.SetDbContextInstance(_companyDbContext);
             _unitOfWork.SetDbContextInstance(_companyDbContext);
+
             UniformChartOfAccount uniformChartOfAccount = _mapper.Map<UniformChartOfAccount>(request);
+
             uniformChartOfAccount.Id = Guid.NewGuid().ToString();
+            uniformChartOfAccount.Name = uniformChartOfAccount.Name.ToUpper();
 
             await _commandRepository.AddAsync(uniformChartOfAccount, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+            return uniformChartOfAccount;
         }
 
         public  IQueryable<UniformChartOfAccount> GetAll()

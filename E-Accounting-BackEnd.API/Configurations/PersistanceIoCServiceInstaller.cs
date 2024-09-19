@@ -28,7 +28,7 @@ using E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndUserRelationS
 using E_Accounting.Persistance.Service.MasterDbServices.MainRoleService;
 using E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelationShipService;
 using E_Accounting.Persistance.Service.Role_Service;
-using E_Accounting.Persistance.UnitOfWorkds;
+using E_Accounting.Persistance.UnitOfWorks;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;
 
 namespace E_Accounting_BackEnd.API.Configurations
@@ -38,52 +38,52 @@ namespace E_Accounting_BackEnd.API.Configurations
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
             #region Context UnitOfWork
-            services.AddScoped<IContextService, ContextService>();
-            services.AddScoped<IMasterUnitOfWork, MasterDbUnitOfWork>();
             services.AddScoped<ICompanyUnitOfWork, CompanyDbUnitOfWork>();
-            services.AddScoped<CompanyDbContext, CompanyDbContext>();
+            services.AddScoped<IMasterUnitOfWork, MasterDbUnitOfWork>();
+            services.AddScoped<IContextService, ContextService>();
+            #endregion
 
             #region Services
-            services.AddScoped<ICompanyService, CompanyService>();
+            #region CompanyDbContext
             services.AddScoped<IUCAFService, UCAFService>();
+            //CompanyServiceDISpot
+            #endregion
+
+            #region AppDbContext
+            services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IMainRoleService, MainRoleService>();
-            services.AddScoped<IMainRoleAndRoleRelationShipService, MainRoleAndRoleRelationShipService>();
+            services.AddScoped<IMainRoleAndRoleRelationShipService  , MainRoleAndRoleRelationShipService>();
             services.AddScoped<IMainRoleAndUserRelationShipService, MainRoleAndUserRelationShipService>();
             services.AddScoped<IUserAndCompanyRelationShipService, UserAndCompanyRelationShipService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            //AppServiceDISpot
             #endregion
-
-
-            #endregion
-
-          
-
-            #region CompanyDbContext
-            services.AddScoped<IUCAFCommandRepository, UCAFCommandRepository>();
-            services.AddScoped<IUCAFQueryRepository, UCAFQueryRepository>();
-            #endregion
-
-            #region Services
             #endregion
 
             #region Repositories
+            #region CompanyDbContext
+            services.AddScoped<IUCAFCommandRepository, UCAFCommandRepository>();
+            services.AddScoped<IUCAFQueryRepository, UCAFQueryRepository>();
+            //CompanyRepositoryDISpot
+            #endregion
 
-            #region MasterDbContext
+
+            #region AppDbContext
             services.AddScoped<ICompanyCommandRepository, CompanyCommandRepository>();
             services.AddScoped<ICompanyQueryRepository, CompanyQueryRepository>();
             services.AddScoped<IMainRoleCommandRepository, MainRoleCommandRepository>();
             services.AddScoped<IMainRoleQueryRepository, MainRoleQueryRepository>();
             services.AddScoped<IMainRoleAndRoleRelationShipCommandRepository, MainRoleAndRoleRelationShipCommandRepository>();
             services.AddScoped<IMainRoleAndRoleRelationShipQueryRepository, MainRoleAndRoleRelationShipQueryRepository>();
-            services.AddScoped<IUserAndCompanyRelationShipCommandRepository, UserAndCompanyRelationShipCommandRepository>();
-            services.AddScoped<IUserAndCompanyRelationShipQueryRepository, UserAndCompanyRelationShipQueryRepository>();
             services.AddScoped<IMainRoleAndUserRelationShipCommandRepository, MainRoleAndUserRelationShipCommandRepository>();
             services.AddScoped<IMainRoleAndUserRelationShipQueryRepository, MainRoleAndUserrelationShipQueryRepoistory>();
+            services.AddScoped<IUserAndCompanyRelationShipCommandRepository, UserAndCompanyRelationShipCommandRepository>();
+            services.AddScoped<IUserAndCompanyRelationShipQueryRepository, UserAndCompanyRelationShipQueryRepository>();
+            //AppRepositoryDISpot
+            #endregion
             #endregion
 
-            #endregion
-      
         }
     }
 }

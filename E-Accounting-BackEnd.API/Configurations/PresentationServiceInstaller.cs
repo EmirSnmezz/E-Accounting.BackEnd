@@ -1,4 +1,5 @@
-﻿using E_Accounting.Persistance.AssemblyReferance;
+﻿
+using E_Accounting.Persistance;
 using E_Accounting_BackEnd.API.Configurations.Abstraction;
 using E_Accounting_BackEnd.API.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,7 +18,7 @@ namespace E_Accounting_BackEnd.API.Configurations
                 options.AllowAnyHeader().AllowAnyMethod().AllowCredentials().SetIsOriginAllowed(options => true);
             }));
 
-            services.AddControllers().AddApplicationPart(typeof(AssemblyManager).Assembly);
+            services.AddControllers().AddApplicationPart(typeof(AssemblyManagerPersistamce).Assembly);
 
             services.AddSwaggerGen(setup => // Swager yapılanmasını özelleştirmek için bir lambda ifadesi kullandık
         {

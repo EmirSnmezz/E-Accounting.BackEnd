@@ -1,12 +1,8 @@
 ﻿using E_Accounting.Application;
 using E_Accounting.Domain.Entities.App_Entites;
+using E_Accounting.Persistance.Context;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Accounting.Persistance
 {

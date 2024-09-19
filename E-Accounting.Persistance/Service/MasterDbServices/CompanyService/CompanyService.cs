@@ -6,6 +6,7 @@ using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
 using E_Accounting.Domain.Repositories.GenericRepositories.CompanyDbContext;
+using E_Accounting.Persistance.Context;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -50,12 +51,19 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
 
         public async Task MigrateCompanyDatabase()
         {
-            var companies = await _queryRepository.GetAll().ToListAsync();
-            foreach (var company in companies)
+            try
             {
-                var db = new CompanyDbContext(company);
-                db.Database.Migrate();
+                var companies = await _queryRepository.GetAll().ToListAsync();
+                foreach (var company in companies)
+                {
+                    var db = new CompanyDbContext(company);
+                    db.Database.Migrate();
+                }
+            }catch (Exception ex)
+            {
+                throw new Exception("Buraya hata düştü");
             }
+          
         }
 
         public async Task RemoveByIdAsync(string id)
