@@ -23,7 +23,7 @@ namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures.UCAFFeatures
         [Fact]
         public async Task UCAFShouldBeNull()
         {
-            UniformChartOfAccount ucaf = await _ucafService.Object.GetByCode(It.IsAny<string>(), default);
+            UniformChartOfAccount ucaf = await _ucafService.Object.GetByCodeAsync(It.IsAny<string>(), It.IsAny<string>(), default);
             ucaf.ShouldBeNull();
         }
 

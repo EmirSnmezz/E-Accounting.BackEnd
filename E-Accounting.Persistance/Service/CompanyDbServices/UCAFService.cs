@@ -32,7 +32,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             throw new NotImplementedException();
         }
 
-        public async Task CreateMainUCAFsToCompany(string companyId, CancellationToken cancellationToken)
+        public async Task CreateMainUCAFsToCompanyAsync(string companyId, CancellationToken cancellationToken)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _commandRepository.SetDbContextInstance(_companyDbContext);
@@ -2202,11 +2202,6 @@ namespace E_Accounting.Persistance.Service.CompanyService
 
             await _commandRepository.AddRangeAsync(uniformChartOfAccounts, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
-        }
-
-        public Task CreateMainUcafsToCompanyAsync(string companyId, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<UniformChartOfAccount> CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)

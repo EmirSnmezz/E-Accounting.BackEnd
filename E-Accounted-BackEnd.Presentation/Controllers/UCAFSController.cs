@@ -4,6 +4,7 @@ using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.Cr
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.RemoveUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.UpdateUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
+using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetByCodeUCAF;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +48,13 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         public async Task<IActionResult> UpdateUCAF(UpdateUCAFCommand request, CancellationToken cancellationToken)
         {
             UpdateUCAFCommandResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetByCodeUCAF (GetByCodeUCAFQuery request, CancellationToken cancellationToken)
+        {
+            GetByCodeUCAFQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

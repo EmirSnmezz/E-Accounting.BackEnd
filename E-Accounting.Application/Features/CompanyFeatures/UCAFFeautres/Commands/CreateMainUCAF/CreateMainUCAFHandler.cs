@@ -13,7 +13,7 @@ namespace E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Command
         }
         public async Task<CreateMainUCAFCommandResponse> Handle(CreateMainUCAFCommand request, CancellationToken cancellationToken)
         {
-            await _ucafService.CreateMainUcafsToCompanyAsync(request.companyId, cancellationToken);
+            await _ucafService.CreateMainUCAFsToCompanyAsync(request.companyId, cancellationToken);
             return new();
         }
     }

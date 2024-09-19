@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\CompanyFeatures\UCAFFeautres\Queries\GetByIdUCAF\" />
     <Folder Include="Features\MasterFeatures\MainRoleAndUserRelationShipFeatures\Queries\" />
     <Folder Include="Features\MasterFeatures\UserAndCompanyRelationShipFeatures\Queries\" />
   </ItemGroup>
