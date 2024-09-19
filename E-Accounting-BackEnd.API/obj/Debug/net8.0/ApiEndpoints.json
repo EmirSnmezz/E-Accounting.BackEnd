@@ -390,6 +390,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
+    "Method": "UpdateUCAF",
+    "RelativePath": "api/UCAFS/UpdateUCAF",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.UpdateUCAF.UpdateUCAFCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UserAndCompanyRelationShipsController",
     "Method": "Create",
     "RelativePath": "api/UserAndCompanyRelationShips/Create",

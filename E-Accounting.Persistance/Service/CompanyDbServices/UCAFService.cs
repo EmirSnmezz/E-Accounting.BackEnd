@@ -1,16 +1,12 @@
 ﻿using AutoMapper;
-using Azure.Core;
 using E_Accounting.Application;
-using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.CompanyEntities;
 using E_Accounting.Persistance.Context;
-using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace E_Accounting.Persistance.Service.CompanyService
 {
@@ -2230,7 +2226,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             return uniformChartOfAccount;
         }
 
-        public  async Task<IQueryable<UniformChartOfAccount>> GetAllAsync(string companyId)
+        public async Task<IQueryable<UniformChartOfAccount>> GetAllAsync(string companyId)
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
@@ -2242,12 +2238,12 @@ namespace E_Accounting.Persistance.Service.CompanyService
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
-            return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code, cancellationToken);
+            return await _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code, cancellationToken);
         }
 
         public async Task<UniformChartOfAccount> GetByIdAsync(string id, string companyId)
         {
-            _companyDbContext = (CompanyDbContext) _contextService.CreateDbContextInstance(companyId);
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
             var result = await _ıUcafQueryRepository.GetById(id);
             return result;
@@ -2266,7 +2262,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
         {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _commandRepository.SetDbContextInstance(_companyDbContext);
-
+            _unitOfWork.SetDbContextInstance(_companyDbContext);
             _commandRepository.Update(account);
             await _unitOfWork.SaveChangesAsync();
         }
