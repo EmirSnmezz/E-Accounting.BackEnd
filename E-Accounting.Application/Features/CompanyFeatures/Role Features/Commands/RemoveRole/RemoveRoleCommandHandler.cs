@@ -28,7 +28,7 @@ namespace E_Accounting.Application.Features.Role_Features.Commands.RemoveRole
                 throw new Exception("İlgili Rol Kaydı Bulunamadı");
             }
 
-            _roleManager.DeleteAsync(role);
+            await _roleManager.DeleteAsync(role);
 
             return new RemoveRoleCommandResponse(); 
         }

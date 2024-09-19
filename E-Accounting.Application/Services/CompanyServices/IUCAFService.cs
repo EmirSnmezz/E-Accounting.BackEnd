@@ -6,8 +6,12 @@ namespace E_Accounting.Application.Services.CompanyService
     public interface IUCAFService
     {
         Task<UniformChartOfAccount> CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken);
-        Task<UniformChartOfAccount> GetByCode(string code, CancellationToken cancellationToken);
-        Task CreateMainUCAFsToCompany(string companyId, CancellationToken cancellationToken);
-        IQueryable<UniformChartOfAccount> GetAll();
+        Task<UniformChartOfAccount> GetByCodeAsync(string companyId, string code, CancellationToken cancellationToken);
+        Task CreateMainUcafsToCompanyAsync(string companyId, CancellationToken cancellationToken);
+        Task<IQueryable<UniformChartOfAccount>> GetAllAsync(string companyId);
+        Task RemoveByIdUcafAsync(string id, string companyId);
+        Task<bool> CheckRemoveByIdUcafIsGroupAndAvailable(string id, string companyId);
+        Task<UniformChartOfAccount> GetByIdAsync(string id, string companyId);
+        Task UpdateAsync(UniformChartOfAccount account, string companyId);
     }
 }

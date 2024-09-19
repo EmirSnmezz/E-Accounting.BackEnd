@@ -1,6 +1,7 @@
 ﻿using E_Accounted_BackEnd.Presentation.Abstraction;
 using E_Accounting.Application.Features.Company_Features.UCAFFeautres.Commands.CreateUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.CreateMainUCAF;
+using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.RemoveUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -27,11 +28,17 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
             return Ok(response);
         }
 
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetAllUCAF()
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetAllUCAF(GetAllUCAFQuery request)
         {
-            GetAllUCAFQuery request = new();
             GetAllUCAFQueryResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> RemoveByIdUcaf(RemoveUCAFCommand request, CancellationToken cancellationToken)
+        {
+            RemoveUCAFCommandResonse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

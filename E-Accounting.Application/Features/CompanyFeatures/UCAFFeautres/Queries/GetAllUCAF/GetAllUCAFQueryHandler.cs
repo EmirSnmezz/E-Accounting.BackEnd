@@ -14,13 +14,13 @@ public class GetAllUCAFQueryHandler : IQueryHandler<GetAllUCAFQuery, GetAllUCAFQ
 
     public async Task<GetAllUCAFQueryResponse> Handle(GetAllUCAFQuery request, CancellationToken cancellationToken)
     {
-        IList<UniformChartOfAccount> ucafs = await _ucafService.GetAll().ToListAsync();
+        IQueryable<UniformChartOfAccount> ucafs = await _ucafService.GetAllAsync(request.companyId);
 
         if (ucafs == null)
         {
             throw new Exception("Görüntülenecek Hesap Planı Kaydı Bulunamadı");
         }
 
-        return new(ucafs.AsQueryable());
+        return new(ucafs);
     }
 }

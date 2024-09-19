@@ -6,5 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
-    public record GetAllUCAFQuery() : IQuery<GetAllUCAFQueryResponse>;
+    public record GetAllUCAFQuery
+    (
+        string companyId
+        ) : IQuery<GetAllUCAFQueryResponse>;
 

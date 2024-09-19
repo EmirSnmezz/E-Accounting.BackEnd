@@ -1,7 +1,6 @@
 ﻿using E_Accounting.Domain.Common;
 using E_Accounting.Domain.Repositories.GenericRepositories.CompanyDbContext;
 using E_Accounting.Persistance.Context;
-using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

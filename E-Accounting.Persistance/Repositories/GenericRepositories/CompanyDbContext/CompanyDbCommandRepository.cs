@@ -10,13 +10,13 @@ namespace E_Accounting.Persistance.Repositories.GenericRepositories.CompanyDbCon
     public class CompanyDbCommandRepository<T> : ICompanyDbCommandRepository<T> where T : BaseEntity
     {
         private CompanyDbContext _companyDbContext;
+
+        public DbSet<T> Table { get; set; }
         public void SetDbContextInstance(DbContext context)
         {
             _companyDbContext = (CompanyDbContext)context;
             Table = _companyDbContext.Set<T>();
-        }
-
-        public DbSet<T> Table {  get; set; }    
+        }  
 
         public async Task AddAsync(T entity, CancellationToken cancellationToken)
         {

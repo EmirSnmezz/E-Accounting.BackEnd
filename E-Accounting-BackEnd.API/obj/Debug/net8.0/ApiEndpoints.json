@@ -361,10 +361,32 @@
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
     "Method": "GetAllUCAF",
     "RelativePath": "api/UCAFS/GetAllUCAF",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF.GetAllUCAFQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.UCAFSController",
+    "Method": "RemoveByIdUcaf",
+    "RelativePath": "api/UCAFS/RemoveByIdUcaf",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.RemoveUCAF.RemoveUCAFCommand",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

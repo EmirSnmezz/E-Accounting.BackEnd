@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure.Core;
 using E_Accounting.Application;
 using E_Accounting.Application.Abstraction.Repositories.BaseRepositories;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.UCAF_Repositories;
@@ -9,6 +10,7 @@ using E_Accounting.Domain.Entities.CompanyEntities;
 using E_Accounting.Persistance.Context;
 using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace E_Accounting.Persistance.Service.CompanyService
 {
@@ -27,6 +29,11 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _contextService = contextService;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+        }
+
+        public Task<bool> CheckRemoveByIdUcafIsGroupAndAvailable(string id, string companyId)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task CreateMainUCAFsToCompany(string companyId, CancellationToken cancellationToken)
@@ -2201,8 +2208,13 @@ namespace E_Accounting.Persistance.Service.CompanyService
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
+        public Task CreateMainUcafsToCompanyAsync(string companyId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<UniformChartOfAccount> CreateUcafAsync(CreateUCAFCommand request, CancellationToken cancellationToken)
-        {// sanırım hatalı
+        {
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(request.CompanyId);
             _commandRepository.SetDbContextInstance(_companyDbContext);
             _unitOfWork.SetDbContextInstance(_companyDbContext);
@@ -2218,17 +2230,45 @@ namespace E_Accounting.Persistance.Service.CompanyService
             return uniformChartOfAccount;
         }
 
-        public  IQueryable<UniformChartOfAccount> GetAll()
+        public  async Task<IQueryable<UniformChartOfAccount>> GetAllAsync(string companyId)
         {
-            var result = _ıUcafQueryRepository.GetAll().AsQueryable();
-            return result;
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
+            var result = await _ıUcafQueryRepository.GetAll().ToListAsync();
+            return result.AsQueryable();
         }
 
-        public async Task<UniformChartOfAccount> GetByCode(string code, CancellationToken cancellationToken)
+        public async Task<UniformChartOfAccount> GetByCodeAsync(string companyId, string code, CancellationToken cancellationToken)
         {
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
             return await  _ıUcafQueryRepository.GetFirstByExpression(x => x.Code == code, cancellationToken);
         }
 
+        public async Task<UniformChartOfAccount> GetByIdAsync(string id, string companyId)
+        {
+            _companyDbContext = (CompanyDbContext) _contextService.CreateDbContextInstance(companyId);
+            _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
+            var result = await _ıUcafQueryRepository.GetById(id);
+            return result;
+        }
 
+        public async Task RemoveByIdUcafAsync(string id, string companyId)
+        {
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _commandRepository.SetDbContextInstance(_companyDbContext);
+            _unitOfWork.SetDbContextInstance(_companyDbContext);
+            await _commandRepository.RemoveById(id);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(UniformChartOfAccount account, string companyId)
+        {
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _commandRepository.SetDbContextInstance(_companyDbContext);
+
+            _commandRepository.Update(account);
+            await _unitOfWork.SaveChangesAsync();
+        }
     }
 }
