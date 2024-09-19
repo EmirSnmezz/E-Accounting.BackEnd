@@ -30,7 +30,7 @@ public sealed class MainRoleService : IMainRoleService
 
     public IList<MainRole> GetAll()
     {
-        return _queryRepository.GetAll().ToList();
+        return _queryRepository.GetAll().OrderBy(x => x.Title).ToList();
     }
 
     public async Task<MainRole> GetByTitleAndCompanyId(string title, string companyId, CancellationToken cancellationToken)

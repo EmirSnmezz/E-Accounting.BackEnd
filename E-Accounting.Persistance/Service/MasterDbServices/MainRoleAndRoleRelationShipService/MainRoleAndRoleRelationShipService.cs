@@ -33,7 +33,7 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndRelationS
 
         public IQueryable<MainRoleAndRoleRelationship> GetAll()
         {
-            return _queryRepository.GetAll();
+            return _queryRepository.GetAll().OrderBy(x => x.MainRole.Title).AsQueryable();
         }
 
         public async Task<MainRoleAndRoleRelationship> GetByIdAsnyc(string id, CancellationToken cancellationToken)
@@ -43,7 +43,7 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.MainRoleAndRelationS
 
         public async Task<List<MainRoleAndRoleRelationship>> GetListByIdForGetRolesAsync(string id, CancellationToken cancellationToken)
         {
-            var result =  await _queryRepository.GetWhere(x => x.MainRoleId == id).Include("AppRole").ToListAsync();
+            var result =  await _queryRepository.GetWhere(x => x.MainRoleId == id).Include("AppRole").OrderBy(x => x.Id).ToListAsync();
             return result;
         }
 

@@ -35,7 +35,8 @@ public sealed class AuthenticationService : IAuthenticationService
     public async Task<List<UserAndCompanyRelationShip>> GetCompanyListByUserIdAsync(string userId, CancellationToken cancellationToken)
     {
         var result = await _userAndCompanyRelationShipService.GetCompanyListByUserId(userId, cancellationToken);
-        return result.ToList();
+        var orderedResult = result.ToList().Order();
+        return orderedResult.ToList();
     }
 
     public async Task<List<string>> GetRolesByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellationToken)
@@ -54,8 +55,7 @@ public sealed class AuthenticationService : IAuthenticationService
             throw new Exception("İlgili Kullanıcıya Ait Role Ataması Gerçekleştirilmemiş");
         }
 
-        List<string> roles = getMainRoles.Select(s => s.AppRole.Code).ToList();
-
+        List<string> roles = getMainRoles.Select(s => s.AppRole.Code).Order().ToList();
         return roles;
     }
 }

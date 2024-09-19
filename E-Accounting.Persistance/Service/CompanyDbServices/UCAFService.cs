@@ -2226,7 +2226,7 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
             _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
             var result = await _ıUcafQueryRepository.GetAll().ToListAsync();
-            return result.AsQueryable();
+            return result.AsQueryable().OrderBy(x => x.Code);
         }
 
         public async Task<UniformChartOfAccount> GetByCodeAsync(string companyId, string code, CancellationToken cancellationToken)

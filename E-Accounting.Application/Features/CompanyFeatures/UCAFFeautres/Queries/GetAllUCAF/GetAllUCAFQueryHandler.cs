@@ -15,7 +15,6 @@ public class GetAllUCAFQueryHandler : IQueryHandler<GetAllUCAFQuery, GetAllUCAFQ
     public async Task<GetAllUCAFQueryResponse> Handle(GetAllUCAFQuery request, CancellationToken cancellationToken)
     {
         IQueryable<UniformChartOfAccount> ucafs = await _ucafService.GetAllAsync(request.companyId);
-
         if (ucafs == null)
         {
             throw new Exception("Görüntülenecek Hesap Planı Kaydı Bulunamadı");

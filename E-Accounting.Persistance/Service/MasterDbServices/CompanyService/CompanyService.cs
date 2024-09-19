@@ -36,7 +36,7 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService
 
         public IQueryable<Company> GetAll()
         {
-            return _queryRepository.GetAll();
+            return _queryRepository.GetAll().OrderBy(x => x.Name);
         }
 
         public async Task<Company> GetById(string id)

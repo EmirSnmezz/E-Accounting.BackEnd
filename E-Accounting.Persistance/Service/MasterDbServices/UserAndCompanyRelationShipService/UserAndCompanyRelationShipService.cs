@@ -37,7 +37,7 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelati
 
         public async Task<IList<UserAndCompanyRelationShip>> GetCompanyListByUserId(string userId, CancellationToken cancellationToken)
         {
-            var result = await _queryRepository.GetWhere(x => x.MasterUserId == userId).Include("Company").ToListAsync(cancellationToken);
+            var result = await _queryRepository.GetWhere(x => x.MasterUserId == userId).Include("Company").OrderBy(x => x.Company.Name).ToListAsync(cancellationToken);
             return result;
         }
 

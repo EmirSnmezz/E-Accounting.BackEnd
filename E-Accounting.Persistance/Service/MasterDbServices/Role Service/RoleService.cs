@@ -35,7 +35,7 @@ namespace E_Accounting.Persistance.Service.Role_Service
         }
         public async Task<IQueryable<AppRole>> GetAllRolesAsync()
         {
-            IList<AppRole> roles = await _roleManager.Roles.ToListAsync();
+            IList<AppRole> roles = await _roleManager.Roles.OrderBy(x => x.Code).ToListAsync();
             return roles.AsQueryable<AppRole>();
         }
 
