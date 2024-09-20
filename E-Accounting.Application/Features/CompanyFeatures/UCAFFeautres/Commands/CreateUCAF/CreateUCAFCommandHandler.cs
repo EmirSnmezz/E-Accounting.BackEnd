@@ -14,6 +14,10 @@ namespace E_Accounting.Application.Features.Company_Features.UCAFFeautres.Comman
         }
         public async Task<CreateUCAFCommandResponse> Handle(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
+            if (request.Type.Equals("G"!) && request.Type.Equals("M"!))
+            {
+                throw new Exception("Geçersiz Tip Tanımlaması! Hesap planı türü Grup ya da Muavin olmalıdır!");
+            }
             UniformChartOfAccount UCAF = await _ucafService.GetByCodeAsync(request.CompanyId, request.Code, cancellationToken);
 
             if (UCAF != null)

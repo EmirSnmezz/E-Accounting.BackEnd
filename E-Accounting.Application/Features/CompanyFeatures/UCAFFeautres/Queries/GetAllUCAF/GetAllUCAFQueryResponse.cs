@@ -3,5 +3,5 @@
 namespace E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
 public record GetAllUCAFQueryResponse
     (
-        IQueryable<UniformChartOfAccount> UCAFs
+        IQueryable<UniformChartOfAccount> Data
     );

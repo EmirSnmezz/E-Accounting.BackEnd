@@ -18,7 +18,7 @@ namespace E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Command
 
             RuleFor(x => x.Type).NotEmpty().WithMessage("Hesap Plan Tipi Boş Olamaz");
             RuleFor(x => x.Type).NotNull().WithMessage("Hesap Plan Tipi Boş Olamaz");
-            RuleFor(x => x.Type).MinimumLength(1).WithMessage("Hesap Plan Tipi 1 Karakter Olmalıdır");
+            //RuleFor(x => x.Type).MinimumLength(1).WithMessage("Hesap Plan Tipi 1 Karakter Olmalıdır");
 
         }
     }

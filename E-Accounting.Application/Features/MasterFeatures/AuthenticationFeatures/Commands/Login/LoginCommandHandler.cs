@@ -35,7 +35,7 @@ namespace E_Accounting.Application.Features.MasterFeatures.AuthenticationFeature
 
             List<UserAndCompanyRelationShip> companies = await _authenticationService.GetCompanyListByUserIdAsync(user.Id, cancellationToken);
 
-            List<CompanyDto> companiesDto = companies.Select(x => new CompanyDto(x.Id, x.Company.Name)).ToList();
+            List<CompanyDto> companiesDto = companies.Select(x => new CompanyDto(x.Company.Id, x.Company.Name)).ToList();
 
             if (companies.Count == 0)
             {

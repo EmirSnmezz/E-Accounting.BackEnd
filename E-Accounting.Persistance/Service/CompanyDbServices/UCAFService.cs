@@ -2199,7 +2199,6 @@ namespace E_Accounting.Persistance.Service.CompanyService
             ucaf308.Type = "A";
             ucaf308.Id = Guid.NewGuid().ToString();
             uniformChartOfAccounts.Add(ucaf308);
-
             await _commandRepository.AddRangeAsync(uniformChartOfAccounts, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
