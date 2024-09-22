@@ -40,7 +40,7 @@ namespace E_Accounted_BackEnd.Presentation.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> RemoveByIdUcaf(RemoveUCAFCommand request, CancellationToken cancellationToken)
         {
-            RemoveUCAFCommandResonse response = await _mediator.Send(request);
+            RemoveUCAFCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
