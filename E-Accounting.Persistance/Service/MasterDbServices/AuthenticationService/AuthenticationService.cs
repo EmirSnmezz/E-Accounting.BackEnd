@@ -43,7 +43,7 @@ public sealed class AuthenticationService : IAuthenticationService
     {
         MainRoleAndUserRelationShip mainRoleAndUserRelationShip = await _mainRoleAndUserRelationShipService.GetRolesByUserIdAndCompanyId(userId, companyId, cancellationToken);
 
-        if (mainRoleAndUserRelationShip.CompanyId != companyId || mainRoleAndUserRelationShip.UserId != userId)
+        if (mainRoleAndUserRelationShip.CompanyId != companyId || mainRoleAndUserRelationShip.UserId != userId || mainRoleAndUserRelationShip == null)
         {
             throw new Exception("Bu şirkete tanımlı böyle bir kullanıcı kaydı yok.");
         }

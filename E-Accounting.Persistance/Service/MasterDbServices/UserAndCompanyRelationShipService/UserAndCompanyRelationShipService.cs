@@ -32,6 +32,10 @@ namespace E_Accounting.Persistance.Service.MasterDbServices.UserAndCompanyRelati
         public async Task<UserAndCompanyRelationShip> GetByUserIdAndCompanyId(string userId, string companyId, CancellationToken cancellationToken)
         {
             var result = await _queryRepository.GetFirstByExpression(x => x.MasterUserId == userId && x.CompanyId == companyId, cancellationToken);
+            if (result == null)
+            {
+                throw new Exception("Kullanıcı Role ilişkisi bulunamadı"); // test
+            }
             return result;
         }
 

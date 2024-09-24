@@ -22,9 +22,19 @@ namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures.UCAFFeatures
             ucafService = new();
         }
 
+        [Fact]  
+        public async Task CheckRemoveByIdUcafIsGroupAndAviableShouldBeTrue()
+        {
+            ucafService.Setup(x =>
+            x.CheckRemoveByIdUcafIsGroupAndAvailable
+            (It.IsAny<string>(),
+            It.IsAny<string>()))
+            .ReturnsAsync(true);
+        }
+
 
         [Fact]
-        public async Task UCAFShouldNotBeNull()
+        public async Task UCAFShouldNotBeNullFoRemoveByIdUcafAsync()
         {
             ucafService.Setup(x => 
                 x.GetByIdAsync(It.IsAny<string>(), It.IsAny<string>()))
@@ -33,15 +43,19 @@ namespace E_Accounting.BackEnd.UnitTest.Features.CompanyFeatures.UCAFFeatures
         }
 
         [Fact]
-        public async Task RemoveByIdUCAFCommandResponseShouldNotBeNull()
+        public async Task RemoveByIdUcafAsyncCommandResponseShouldNotBeNull()
         {
             RemoveUCAFCommand command = new("testId", "TestCompanyId");
+            var checkIfAvaiblable = ucafService.Object.CheckRemoveByIdUcafIsGroupAndAvailable(command.id, command.companyId);
+
             RemoveUCAFCommandHandler handler = new(ucafService.Object);
-            
+           
+
             ucafService.Setup(x =>
-             x.GetByIdAsync(It.IsAny<string>(), It.IsAny<string>()))
-             .ReturnsAsync(new UniformChartOfAccount())
-             .ShouldNotBeNull();
+           x.CheckRemoveByIdUcafIsGroupAndAvailable
+           (It.IsAny<string>(),
+           It.IsAny<string>()))
+           .ReturnsAsync(true);
 
             RemoveUCAFCommandResponse Response = await handler.Handle(command, default);
             Response.ShouldNotBeNull();

@@ -19,6 +19,17 @@ public sealed record UpdateUCAFCommandHandler : ICommandHandler<UpdateUCAFComman
             throw new Exception("Güncellenmek istenen hesap planı kaydına ulaşılamadı. Lütfen sistem yöneticisiyle iletişime geçiniz...");
 
         }
+
+        if(result.Code == request.Code )
+        {
+            throw new Exception("Güncellemek İstediğiniz Hesap Planı Mevcut...");
+        }
+
+        if(request.Type != "G" && request.Type != "M")
+        {
+            throw new Exception("Hesap Planı Türü Grup Ya Da Muavin Olmalıdır");
+        }
+
         result.Type = request.Type;
         result.Name = request.Name;
         result.Code = request.Code;

@@ -17,7 +17,7 @@ namespace E_Accounting.Persistance.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=EMIRSNMEZ;Initial Catalog=E-Accounting-Master;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer("Data Source=EMR_SNMEZ\\EMIRSNMEZ;Initial Catalog=E-Accounting-Master;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         public DbSet<Company> Companies { get; set; }

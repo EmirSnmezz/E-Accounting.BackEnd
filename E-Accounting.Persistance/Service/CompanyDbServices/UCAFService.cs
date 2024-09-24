@@ -27,9 +27,23 @@ namespace E_Accounting.Persistance.Service.CompanyService
             _mapper = mapper;
         }
 
-        public Task<bool> CheckRemoveByIdUcafIsGroupAndAvailable(string id, string companyId)
+        public async Task<bool> CheckRemoveByIdUcafIsGroupAndAvailable(string id, string companyId)
         {
-            throw new NotImplementedException();
+            _companyDbContext = (CompanyDbContext)_contextService.CreateDbContextInstance(companyId);
+            _ıUcafQueryRepository.SetDbContextInstance(_companyDbContext);
+
+            UniformChartOfAccount ucaf = await _ıUcafQueryRepository.GetById(id);
+            if(ucaf.Type.Equals("G"))
+            {
+                var list = await _ıUcafQueryRepository.GetWhere(x => x.Code.StartsWith(ucaf.Code) && x.Type == "G").ToListAsync();
+                if(list.Count() > 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            return true;
         }
 
         public async Task CreateMainUCAFsToCompanyAsync(string companyId, CancellationToken cancellationToken)

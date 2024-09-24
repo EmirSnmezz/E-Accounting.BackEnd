@@ -12,6 +12,12 @@ public sealed record RemoveUCAFCommandHandler : ICommandHandler<RemoveUCAFComman
     }
     public async Task<RemoveUCAFCommandResponse> Handle(RemoveUCAFCommand request, CancellationToken cancellationToken)
     {
+        var checkRemoveUcafById = await _ucafService.CheckRemoveByIdUcafIsGroupAndAvailable(request.id, request.companyId);
+
+        if(!checkRemoveUcafById)
+        {
+            throw new Exception("Hesap Planına Bağlı Alt Hesaplar Olduğundan Bu Hesap Plan Kaydı Silinememektedir.");
+        }
         await _ucafService.RemoveByIdUcafAsync(request.id, request.companyId);
         return new();
     }

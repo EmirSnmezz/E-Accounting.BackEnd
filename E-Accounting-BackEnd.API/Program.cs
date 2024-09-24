@@ -36,11 +36,11 @@ app.UseCors();
 using (var scoped = app.Services.CreateScope())
 {
     var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-    
-    if(!userManager.Users.Any())
+
+    if (!userManager.Users.Any())
     {
 
-        AppUser user = new ()
+        AppUser user = new()
         {
             Id = Guid.NewGuid().ToString(),
             UserName = "admin",
@@ -48,9 +48,9 @@ using (var scoped = app.Services.CreateScope())
             Email = "emircan_snmez@outlook.com",
         };
 
-         var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
+        var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
     }
-        
+
 }
 
 app.Run();
