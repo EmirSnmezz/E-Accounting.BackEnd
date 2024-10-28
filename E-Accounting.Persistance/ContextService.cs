@@ -16,7 +16,16 @@ namespace E_Accounting.Persistance
         public DbContext CreateDbContextInstance(string companyId)
         {
             Company company = ((MasterDbContext)_contextService).Set<Company>().Find(companyId);
-            return new CompanyDbContext(company);
+            if(company != null)
+            {
+                return new CompanyDbContext(company);
+            }
+
+            else
+            {
+                throw new Exception("Connection String Company Bilgilerine Ulaşılamadığı için oluşturulamadı. Lütfen Sistem Yöneticinizle İletişime Geçin...");
+            }
+            
         }
     }
 }                           

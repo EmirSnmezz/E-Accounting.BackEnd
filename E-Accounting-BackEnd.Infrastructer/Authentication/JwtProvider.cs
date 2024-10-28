@@ -31,7 +31,7 @@ namespace E_Accounting_BackEnd.Infrastructer.Authentication
                 //new Claim(ClaimTypes.Role, string.Join(",", roles))
                 };
 
-            DateTime expires = DateTime.Now.AddDays(1);
+            DateTime expires = DateTime.Now.AddMinutes(1);
 
             JwtSecurityToken jwtSecurityToken = new(
                 issuer: _jwtOptions.Issuer,
@@ -47,7 +47,7 @@ namespace E_Accounting_BackEnd.Infrastructer.Authentication
 
             string refreshToken = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
             user.RefreshToken =  refreshToken;
-            user.RefreshTokenExpires = expires.AddDays(1);
+            user.RefreshTokenExpires = expires.AddHours(1);
             await _userManager.UpdateAsync(user);
             return new(token, refreshToken, user.RefreshTokenExpires);
         }

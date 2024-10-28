@@ -6,10 +6,12 @@ using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Commands.Up
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetAllUCAF;
 using E_Accounting.Application.Features.CompanyFeatures.UCAFFeautres.Queries.GetByCodeUCAF;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Accounted_BackEnd.Presentation.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class UCAFSController : ApiController
     {
         public UCAFSController(IMediator mediator) : base(mediator)

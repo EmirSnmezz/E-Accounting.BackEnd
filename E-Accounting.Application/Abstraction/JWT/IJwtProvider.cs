@@ -5,7 +5,6 @@ namespace E_Accounting.Application.Abstraction.JWT
 {
     public interface IJwtProvider
     {
-
         Task<RefreshTokenDto> CreateTokenAsync(AppUser user);
     }
 }

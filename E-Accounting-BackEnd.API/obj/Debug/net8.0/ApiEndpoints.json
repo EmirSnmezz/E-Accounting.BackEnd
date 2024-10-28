@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.AuthController",
+    "Method": "GetTokenByRefreshToken",
+    "RelativePath": "api/Auth/GetTokenByRefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.MasterFeatures.AuthenticationFeatures.Commands.GetTokenByRefreshToken.GetTokenByRefreshTokenCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -252,6 +268,38 @@
       {
         "Name": "request",
         "Type": "E_Accounting.Application.Features.MasterFeatures.MainRoleAndUserRelationShipFeatures.Command.Remove.RemoveMainRoleAndUserRelationShipCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.ReportController",
+    "Method": "GetAllReport",
+    "RelativePath": "api/Report/GetAllReport",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.CompanyFeatures.ReportFeatures.Queries.GetAllReport.GetAllReportQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Accounted_BackEnd.Presentation.Controllers.ReportController",
+    "Method": "RequestReport",
+    "RelativePath": "api/Report/RequestReport",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Accounting.Application.Features.CompanyFeatures.ReportFeatures.Commands.RequestReport.RequestReportCommand",
         "IsRequired": true
       }
     ],

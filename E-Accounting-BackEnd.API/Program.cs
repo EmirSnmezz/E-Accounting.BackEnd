@@ -25,32 +25,28 @@ app.UseHttpsRedirection();
 
 app.UseExceptionMiddleware();
 
-app.UseAuthorization();
-
-app.UseAuthentication(); // JWT kullanabilmemiz için Authentication yapýsnýn kurulmuþ olmasý gerekmektedir.
-
 app.MapControllers();
 
 app.UseCors();
 
-using (var scoped = app.Services.CreateScope())
-{
-    var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+//using (var scoped = app.Services.CreateScope())
+//{
+//    var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
 
-    if (!userManager.Users.Any())
-    {
+//    if (!userManager.Users.Any())
+//    {
 
-        AppUser user = new()
-        {
-            Id = Guid.NewGuid().ToString(),
-            UserName = "admin",
-            UserFirstAndLastName = "emrsnmezz",
-            Email = "emircan_snmez@outlook.com",
-        };
+//        AppUser user = new()
+//        {
+//            Id = Guid.NewGuid().ToString(),
+//            UserName = "admin",
+//            UserFirstAndLastName = "emrsnmezz",
+//            Email = "emircan_snmez@outlook.com",
+//        };
 
-        var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
-    }
+//        var result = await userManager.CreateAsync(user, "Emir123.").WaitAsync(new CancellationToken());
+//    }
 
-}
+//}
 
 app.Run();

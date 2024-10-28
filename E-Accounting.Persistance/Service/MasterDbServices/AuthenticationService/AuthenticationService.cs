@@ -35,7 +35,7 @@ public sealed class AuthenticationService : IAuthenticationService
     public async Task<List<UserAndCompanyRelationShip>> GetCompanyListByUserIdAsync(string userId, CancellationToken cancellationToken)
     {
         var result = await _userAndCompanyRelationShipService.GetCompanyListByUserId(userId, cancellationToken);
-        var orderedResult = result.ToList().Order();
+        var orderedResult = result.ToList();
         return orderedResult.ToList();
     }
 

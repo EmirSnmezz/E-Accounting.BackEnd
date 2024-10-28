@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using E_Accounting.Application.Abstraction.Repositories.Repositories_Of_Entities.MasterDbContext.CompanyRepositories;
 using E_Accounting.Application.Features.MasterFeatures.CompanyFeatures.Commands.CreateCompany;
-using E_Accounting.Application.Services.CompanyService;
 using E_Accounting.Application.Services.MasterService;
 using E_Accounting.Application.UnitOfWorks;
 using E_Accounting.Domain.Entities.App_Entites;
-using E_Accounting.Domain.Repositories.GenericRepositories.CompanyDbContext;
 using E_Accounting.Persistance.Context;
-using E_Accounting.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Accounting.Persistance.Service.MasterDbServices.CompanyService

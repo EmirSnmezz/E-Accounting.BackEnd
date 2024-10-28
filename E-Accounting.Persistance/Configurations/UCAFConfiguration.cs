@@ -3,7 +3,7 @@ using E_Accounting.Persistance.Constans;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace E_Accounting.Persistance
+namespace E_Accounting.Persistance.Configurations
 {
     public sealed class UCAFConfiguration : IEntityTypeConfiguration<UniformChartOfAccount>
     {

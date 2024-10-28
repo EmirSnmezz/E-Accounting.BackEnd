@@ -62,6 +62,11 @@ namespace E_Accounting.Persistance.Contexts
                 return new MasterDbContext(builder.Options);
             }
         }
+
+        public static explicit operator MasterDbContext(Company v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

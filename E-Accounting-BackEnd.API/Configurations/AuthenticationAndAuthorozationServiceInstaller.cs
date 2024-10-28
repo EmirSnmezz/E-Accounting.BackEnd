@@ -14,6 +14,7 @@ namespace E_Accounting_BackEnd.API.Configurations
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                                        .AddJwtBearer();
+            services.AddAuthorization();
         }
     }
 }
